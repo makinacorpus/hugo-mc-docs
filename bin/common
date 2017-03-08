@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+SC=${SC:-$(readlink -f $0)}
+THEME=$(dirname $(dirname $SC))
+THEMES=$(dirname $THEME)
+W=$(dirname $THEMES)
+if [[ "$(basename $THEMES)" != "themes" ]];then
+    echo "install this in a correct theme folder layout"
+    exit 1
+fi
+if [[ -n $DEBUG ]];then
+    echo "HUGODIR: $W"
+    echo "THEME: $THEME"
+fi
+if [ -e "$W/venv/bin/activate" ];then
+    . "$W/venv/bin/activate"
+fi

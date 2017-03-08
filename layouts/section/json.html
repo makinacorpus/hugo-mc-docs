@@ -1,0 +1,6 @@
+<!--note that I include
+  title, subtitle (optional), tags, and description in all my content .md yaml.
+Once you get this down, remove the extra white space
+because it will cut down your site-index.json file considerably.-->
+[{{ range $index, $page := .Site.Pages }} {{ if ne $page.Type "json" }} {{ if and $index (gt $index 1) }},{{ end }} {"url": {{ $page.Permalink | jsonify }}, "title": {{ $page.Title | jsonify }}, {{ if $page.Params.subtitle }} "subtitle": {{ $page.Params.subtitle | jsonify}}, {{ else }} "subtitle": "",{{ end }} "section": {{ .Section | jsonify }}, "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ $tag }}"{{ end }}], "description": "{{.Description}}", "content": {{ delimit $page.PlainWords " " | jsonify}}
+}{{ end }}{{ end }}]

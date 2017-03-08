@@ -1,0 +1,44 @@
+{{ define "main" }}
+{{ $dummy := index .Params "dummy" | default false }}
+{{ $title := .Title }}
+<main class="main">
+  <div class="content">
+    <header class="content-header">
+      {{ partial "breadcrumb.html" . }}
+      <h1 class="page-title {{if eq .Kind "page"}}{{.Section}}{{end}}" id="{{ .Title | urlize }}">
+      {{- .Title | markdownify -}}</h1>
+      {{ partial "content-header-links.html" . }}
+      {{ partial "tags.html" . }}
+    </header>
+    <div class="body-copy">
+      {{ .Content }}
+      <div class="all-contents" style="display:none">
+      {{ range .Data.Pages.GroupBy "Section" }}
+      <h3>{{ .Key }}</h3>
+      <ul>
+        {{ range .Pages }}
+        {{ $kind := .Kind }}
+        {{ $cdummy := index .Params "dummy" | default false }}
+        {{ if not $cdummy }}
+        <li>
+          <a {{ with .Params.sitelink }}href="{{.}} "target="_blank"{{else}}href="{{.Permalink}}"{{end}}>
+            <section class="contents-list {{ $kind }}">
+              <header>
+                <h3 class="list-icon {{.Section}}">
+                  {{.Title | markdownify}}{{with .Params.sitelink }}&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>{{end}}
+                </h3>
+              </header>
+              <p>{{.Description | markdownify }}</p>
+            </section>
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+      {{ end }}
+      </div>
+    </div>
+    {{partial "content-footer.html" . }}
+  </div>
+</main>
+{{ end }}

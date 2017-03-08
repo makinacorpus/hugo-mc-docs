@@ -1,0 +1,12 @@
+{{ $currentPage := $.Scratch.Get "currentPage" }}
+{{ $currentNode := $.Scratch.Get "currentNode" }}
+{{ $navLevel    := $.Scratch.Get "navLevel" }}
+<li class="menu-item menu-item-{{$navLevel}}">
+  <a
+    class="list-icon menu-item-link menu-item-link-{{$navLevel}}{{ if $currentNode.HasChildren}} has-children{{end}}{{if eq .URL $currentNode.URL }} active open{{end}}" href="{{ $currentNode.URL }}">{{$currentNode.Name }}</a>
+  {{ if $currentNode.HasChildren }}
+  {{ $.Scratch.Set "currentNode" $currentNode.Children }}
+  {{ partial "site-navigation-start" $currentPage }}
+  {{ $.Scratch.Set "currentNode" $currentNode }}
+  {{ end }}
+</li>

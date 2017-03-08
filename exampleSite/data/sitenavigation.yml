@@ -1,0 +1,36 @@
+about:
+  order: 1
+  title: "About Hugo"
+  url: "about"
+  haschildren: true
+  sortsubpagesby: "weight"
+  desc: "Hugo's features, roadmap, and license, as well as the motivation behind creating Hugo"
+gettingstarted:
+  order: 2
+  title: "Getting Started"
+  url: "getting-started"
+  haschildren: true
+  sortsubpagesby: "weight"
+  desc: "Quick start, cross-platform installation, configuration, basic usage, and directory structure"
+contentmanagement:
+  order: 3
+  title: "Content Management"
+  url: "content-management"
+  haschildren: true
+  sortsubpagesby: "weight"
+  desc: "Summaries, shortcodes, archetypes, permalinks, front matter, and supported content formats"
+templates:
+  order: 4
+  title: "Templates"
+  url: "templates"
+  haschildren: true
+  sortsubpagesby: "weight"
+  desc: "Pagination, homepage, rss, sitemap, lookup order, and data templates"
+functions:
+  order: 5
+  title: "Functions"
+  url: "functions"
+  haschildren: false
+  sortsubpagesby: "title"
+  desc: "Comprehensive list of Hugo templating functions, including basic and advanced usage examples"
+

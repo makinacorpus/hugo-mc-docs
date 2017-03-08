@@ -1,0 +1,13 @@
+{{ $currentPage := $.Scratch.Get "currentPage" }}
+{{ $currentNode := $.Scratch.Get "currentNode" }}
+{{ $navLevel    := ($.Scratch.Get "navLevel" | default 0) | add 1 }}
+<ul class="menu menu-{{$navLevel}}">
+{{ range (sort $currentNode ".Weight")  }}
+  {{  $.Scratch.Set "currentNode" . }}
+  {{  $.Scratch.Set "navLevel" $navLevel }}
+  {{  partial "site-navigation-item" $currentPage }}
+  <!-- restore context -->
+  {{ $.Scratch.Set "currentNode" $currentNode }}
+  {{ $.Scratch.Set "navLevel" $navLevel }}
+{{ end }}
+</ul>

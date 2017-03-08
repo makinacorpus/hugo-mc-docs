@@ -1,0 +1,3 @@
+<h1 class="page-title {{.Section}}" id="{{with .LinkTitle}}{{. | urlize}}{{else}}{{ .Title | urlize }}{{end}}">
+		{{- .Title | markdownify -}}
+</h1>

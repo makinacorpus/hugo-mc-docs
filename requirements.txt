@@ -1,0 +1,23 @@
+six==1.10.0
+packaging==16.8
+appdirs==1.4.2
+ipython
+roman
+recommonmark
+Pygments==2.2.0
+pymdown-extensions==2.0
+
+# Sphinx
+#guzzle_sphinx_theme==0.7.11
+#cloud_sptheme==1.8.3
+#sphinx_bootstrap_theme==0.4.14
+#Sphinx==1.5.3
+#sphinx-intl==0.9.9  # translation tool
+#sphinx_rtd_theme==0.2.0
+#-e git+https://github.com/bitprophet/alabaster/@aaf43e47ff1af53b443897f64b70465d8bb6d476#egg=alabaster
+#-e git+https://github.com/mkdocs/mkdocs-bootswatch.git@90e00eea933a47f29f974eb92b07ff00a4d72c88#egg=mkdocs-bootswatch
+
+# MkDocs
+#mkdocs-material==1.0.5
+#mkdocs==0.16.1
+##-e git+https://github.com/mkdocs/mkdocs.git@590ae3114d3e6ecfdf305d291cb5278fac102d8b#egg=mkdocs

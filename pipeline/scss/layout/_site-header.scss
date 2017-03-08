@@ -1,0 +1,126 @@
+.site-header {
+  width: 100%;
+  height: $site-header-height;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  background-color: $site-header-bg-color;
+  color: $site-header-color;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+  @include card(1);
+  @include MQ(L) {
+    justify-content: space-between;
+  }
+  .hugo-meta {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    @include MQ(L) {
+      float: left;
+      width: auto;
+      justify-content: flex-start;
+      // max-width: 200px;
+    }
+  }
+  #home-link {
+    display: flex;
+    align-items: center;
+    font-size: .8em;
+    margin-left: 1.5em;
+    img {
+      height: $site-header-height * .7;
+      margin-right: .25em;
+    }
+    .hugo-v {
+      align-self: flex-end;
+      font-size: .9em;
+    }
+  }
+  a.github-button {
+    display: none;
+    @include MQ(M) {
+      display: inline;
+    }
+  }
+  //github buttons in site-header
+  iframe[src^="https://buttons.github.io"] {
+    display: none;
+    @include MQ(M) {
+      display: inline;
+    }
+    margin-left: 1em;
+  }
+}
+
+.header-content {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  color: $hugo-white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: $M;
+  .footer-info {
+    width: 100%;
+    span {
+      width: 100%;
+      display:block;
+      text-align: center;
+      margin-top:1em;
+      @include MQ(M){
+        margin-top:0px;
+      }
+    }
+    @include MQ(M) {
+      width: 200px;
+    }
+  }
+  img {
+    max-width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  @include MQ(M) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    div {
+      min-width: 120px;
+      // width: 50%;
+      // max-width: 50%;
+    }
+  }
+}
+     
+
+.header-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $hugo-white;
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  max-width: auto;
+  margin-right: 200em;
+  margin: 0px;
+  flex-wrap: wrap;
+  ul {
+    list-style: none;
+    li a {
+      color: $hugo-white;
+      font-size: .8em;
+    }
+  }
+}
+ 
+

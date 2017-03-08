@@ -1,0 +1,74 @@
+---
+baseURL: "/"
+title: "doc"
+theme: "hugo-mc-docs"
+# ignoreFiles:
+#   - "\\.foo$"
+defaultContentLanguage: fr
+languageCode: "fr-FR"
+buildDrafts: true
+uglyURLs: true
+canonifyurls: true
+taxonomies:
+  category: "categories"
+  tag: "tags"
+params:
+  brand: "Makina Corpus"
+  organizationname: "Makina Corpus"
+  sitedescription: "docs"
+  release: "1"
+  description: "documentation"
+  logo: "MakinaCorpus_logo_vert_blanc.svg"
+  favicon: "favicon.ico"
+  siteaddress: "https://foo.net"
+  ghrepo: "https://gitlab.foo.net/doc/umentation"
+  ghdocsrepo: "https://gitlab.makina-corpus.net/doc/umentation/edit/master/"
+  permalink: "#"
+  includejq: false
+  sitepublishdate: ""
+  twitterhandle: null
+  facebook: null
+  defaultsocialimage: null
+  removefromexternalsearch: true
+  ghdocswiki: null
+  ghdevwiki: null
+  gitter: null
+  forum: null
+  gtmid: ""
+  # Set to true to include a CDN call to FontAwesome
+  # (note that Hugo docs currently hosts its own FA
+  # (see pipeline/scss/_variables.scss))
+  usefontawesome: false
+# disableKinds = ["page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
+disablePathToLower: false
+disableLiveReload: false
+disableRSS: false
+disableSitemap: false
+enableGitInfo: false
+enableRobotsTXT: true
+disable404: false
+disableHugoGeneratorInject: true
+enableEmoji: true
+verbose: true
+verboseLog: true
+hrefTargetBlank: true
+blackfriday:
+  hardLineBreak: true
+  footnotes: true
+  definitionLists: true
+  fencedCode: true
+  tables: true
+  smartypants: true
+  fractions: true
+  smartDashes: true
+  plainIDAnchors: true
+# This intelligently adds an "s" to the titles of list pages
+pluralizelisttitles: false
+preserveTaxonomyNames: true
+pygmentsUseClasses: true
+watch: true
+metaDataFormat: "yaml"
+permalinks:
+  temp: "/:title"
+---
+# vim: set et:

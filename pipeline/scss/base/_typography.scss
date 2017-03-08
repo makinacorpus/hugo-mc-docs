@@ -1,0 +1,87 @@
+// @include fonts('muli', $weights: 100 300 400 600 700 800, $italic: true);
+@include fonts('robotomono', $weights: 200 300 400 500 700, $italic: false);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  margin: 0px;
+  line-height: 1.15;
+  position: relative;
+  > code, > a {
+    font-weight: $heading-font-weight;
+  }
+}
+
+h1.page-title {
+  @include MQALL('font-size',1.8em,2.3em);
+  line-height: 1.2;
+  letter-spacing: -.021em;
+  padding-bottom: 0px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: $heading-font-weight;
+  @include MQ(M) {
+    padding-top: 0px;
+  }
+  img {
+    display: inline;
+    @include size(1em);
+    margin-right: .15em;
+  }
+  i[class^="icon-"] {
+    margin-left: -.15em;
+    margin-right: .15em;
+  }
+}
+
+h2,
+h3 {
+  padding-bottom: 24px;
+  // padding-right: 1.5em;
+}
+
+h2 {
+  @include MQALL('font-size',1.4em,1.6em);
+  &.contents-list-heading {
+    text-transform: uppercase;
+    color: $hugo-gray;
+    em {
+      font-style: normal;
+    }
+  }
+}
+
+h3 {
+  @include MQALL('font-size',1.2em);
+}
+
+h4 {
+  font-size: 1.1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: $hugo-gray;
+  // text-transform: uppercase;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: $heading-font-weight;
+  margin-bottom: 1em;
+  color: $base-font-color;
+}
+
+//keeps index page from taking on code/pre font family
+.submenu-item:first-child {
+  a.submenu-item-link.functions {
+    font-family: $base-font-family;
+  }
+}
+
+hr {
+  border-top: 3px double $base-font-color;
+}
