@@ -1,20 +1,22 @@
 # MakinaCorpus documentation Theme for hugo
+## initialize a new project based on this theme
+
+```sh
+mkdir hugoproject
+cd hugoproject
+git init
+mkdir content data layouts i18n public static
+git submodule add https://github.com/makinacorpus/hugo-mc-docs.git themes/hugo-mc-docs
+cd themes/hugo-mc-docs/exampleSite
+cp -r ../.gitignore * ../../..
+cd ../../..
+git add .
+$EDITOR config.yaml
+git commit -am init
+```
 
 ## install/usage
 
-- Download
-
-    ```sh
-    mkdir hugoproject
-    cd hugoproject
-    git init
-    mkdir content data layouts i18n public static
-    git submodule add https://github.com/makinacorpus/hugo-mc-docs.git themes/hugo-mc-docs
-    cd themes/hugo-mc-docs/exampleSite
-    cp -r ../.gitignore * ../../..
-    git add .
-    git commit -am init
-    ```
 - non docker
 
     ```sh
@@ -37,4 +39,5 @@
 ## Notes
 - This theme install its own hugo, node & virtualenv flavors
     on local folders along the project (./var).
+- naviguation is inspired from Material themes
 - Livesearch is enabled throrough lunr.js and a special crafted (via hugo at build time) JSON file.
