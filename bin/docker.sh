@@ -10,7 +10,7 @@ if [[ -z $NO_BUILD ]];then
     # by dockerignore
     tar -cf - .\
         --exclude={venv,.git,var,build,themes/*/*/node_modules} \
-        | docker build -f "$THEME/Dockerfile" -t makinacorpus/sysdoc -
+        | docker build -f "themes/$(basename $THEME)/Dockerfile" -t makinacorpus/sysdoc -
     # docker build -t makinacorpus/sysdoc .
     set +x
 fi

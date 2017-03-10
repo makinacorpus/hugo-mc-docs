@@ -1,3 +1,11 @@
+---
+title: Installation de la documentation
+tags: [contribute, tutorial]
+menu:
+  main:
+    parent: contribute
+---
+
 Installer & tester des modifications sur la documentation
 =========================================================
 
@@ -27,6 +35,10 @@ gitlab:
 Editer sur sa machine
 ---------------------
 
+La procédure de build est la suivate:
+- build des static css/js avec gulp
+- build hugo
+
 ### Installation sans docker
 
 #### Prerequis
@@ -52,58 +64,43 @@ themes/hugo-mc-docs/bin/control.sh intall
 
 ### Installation avec docker
 
-L'install à proprement parler, fait partie du build, après le
-téléchargement passez à l'étape suivante
+- L'install à proprement parler, fait partie du build, après le
+  téléchargement passez à l'étape suivante.
 
-```sh
-git clone https://gitlab.foo.net/docu/tation
-cd tation
-```
+    ```sh
+    git clone --recursive https://gitlab.makina-corpus.net/docu/tation
+    cd tation
+    themes/hugo-mc-docs/bin/control.sh infest
+    bin/docker.sh
+    ```
 
 ### Reconstuire la documentation
-
 #### Sans docker
+- Après installation, pour construire la documentation
 
-Après installation, pour construire la documentation
-
-console1:
-```sh
-cd tation
-bin/control.sh hugo_server
-```
-
-console2:
-```sh
-cd tation
-bin/control.sh gulp
-```
+    ```sh
+    bin/control.sh serve
+    ```
 
 #### Avec docker
 
 - Construire la documentation
 
-console1
-```sh
-./bin/docker_build.sh hugo_server
-```
-
-console2
-```sh
-./bin/docker_build.sh gulp
-```
+    ```sh
+    bin/docker.sh serve
+    ```
 
 ### Tester & envoyer ses modications
-
 - Editer la construction & la reconstuire
 - Regarder [http://localhost:1313](http://localhost:1313)
 - Une fois toutes les modifications faites, vous pouvez soumettre, au
   travers de gitlab, une merge request:
 
-```sh
-git add
-git commit -am "ma modif"
-git push origin HEAD:feature-mydocmodif
-```
+     ```sh
+     git add
+     git commit -am "ma modif"
+     git push origin HEAD:feature-mydocmodif
+     ```
 
 - Se connecter sur gitlab, et demander une merge request.
 - Une fois la merge request acceptée, votre modif apparaitra

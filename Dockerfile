@@ -11,18 +11,23 @@ RUN bash -c "\
         tcl8.4 tcl8.4-dev tcl8.5 tcl8.5-dev tk8.5-dev cython python-numpy zlib1g-dev" &&\
     bash -c "apt-get install -y virtualenv || apt-get install -y python-virtualenv"
 
+ENV HUGO_THEME hugo-mc-docs
+ENV HUGO_THEME_DIR themes/hugo-mc-docs
+
+ADD ${HUGO_THEME_DIR}/bin/common /s/${HUGO_THEME_DIR}/bin/common
+
 # Pÿgment
-ADD requirements.txt /s/requirements.txt
-ADD bin/install_venv.sh /s/bin/install_venv.sh
-RUN /s/bin/install_venv.sh
+ADD ${HUGO_THEME_DIR}/requirements.txt /s/${HUGO_THEME_DIR}/requirements.txt
+ADD ${HUGO_THEME_DIR}/bin/install_venv.sh /s/${HUGO_THEME_DIR}/bin/install_venv.sh
+RUN /s/${HUGO_THEME_DIR}/bin/install_venv.sh
 
 # Hugo
-ADD bin/install_hugo.sh /s/bin/install_hugo.sh
-RUN /s/bin/install_hugo.sh
+ADD ${HUGO_THEME_DIR}/bin/install_hugo.sh /s/${HUGO_THEME_DIR}/bin/install_hugo.sh
+RUN /s/${HUGO_THEME_DIR}/bin/install_hugo.sh
 
 # Nodejs
-ADD bin/install_node.sh /s/bin/install_node.sh
-RUN /s/bin/install_node.sh
+ADD ${HUGO_THEME_DIR}/bin/install_node.sh /s/${HUGO_THEME_DIR}/bin/install_node.sh
+RUN /s/${HUGO_THEME_DIR}/bin/install_node.sh
 
 # Theme
 ADD config.yaml /s/config.yaml
@@ -32,4 +37,4 @@ ADD data /s/data
 ADD layouts /s/layouts
 ADD static /s/static
 ADD themes /s/themes
-ADD bin/control.sh /s/bin
+ADD ${HUGO_THEME_DIR}/bin/control.sh /s/${HUGO_THEME_DIR}/bin
