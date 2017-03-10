@@ -26,7 +26,7 @@ main() {
         cmd=""
         shift
     fi
-    local args=${@}
+    local args=${@:-serve}
     case ${args} in
         serve*)
             dargs="-p ${LIVERELOAD_PORT:-35729}:35729 -p ${HUGOPORT:-1313}:1313"

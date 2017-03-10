@@ -70,8 +70,7 @@ themes/hugo-mc-docs/bin/control.sh intall
     ```sh
     git clone --recursive https://gitlab.makina-corpus.net/docu/tation
     cd tation
-    themes/hugo-mc-docs/bin/control.sh infest
-    bin/docker.sh
+    themes/hugo-mc-docs/bin/docker.sh
     ```
 
 ### Reconstuire la documentation

@@ -55,8 +55,11 @@ infest() {
     done
 }
 install() {
-    $THEME/bin/install.sh
+    "$THEME/bin/install.sh"
     infest
+}
+vactivate() {
+    . "$W/var/venv/bin/activate"
 }
 main() {
     case $@ in
@@ -79,10 +82,10 @@ main() {
             ( call_gulp serve $@; )
             ;;
         "hugo "*)
-            $@
+            ( vactivate && $@ ;)
             ;;
         *)
-            echo "$0 gulp|serve|watch|install|infest"
+            echo "$0 gulp|serve|watch|install|infest|hugo"
             exit 1
             ;;
     esac
