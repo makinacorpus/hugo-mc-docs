@@ -10,31 +10,24 @@ RUN bash -c "\
         man-db pkg-config poppler-utils python-dev python-imaging python-setuptools \
         tcl8.4 tcl8.4-dev tcl8.5 tcl8.5-dev tk8.5-dev cython python-numpy zlib1g-dev" &&\
     bash -c "apt-get install -y virtualenv || apt-get install -y python-virtualenv"
-
 ENV HUGO_THEME hugo-mc-docs
+ENV W /s
 ENV HUGO_THEME_DIR themes/hugo-mc-docs
-
-ADD ${HUGO_THEME_DIR}/bin/common /s/${HUGO_THEME_DIR}/bin/common
-
-# Pÿgment
-ADD ${HUGO_THEME_DIR}/requirements.txt /s/${HUGO_THEME_DIR}/requirements.txt
-ADD ${HUGO_THEME_DIR}/bin/install_venv.sh /s/${HUGO_THEME_DIR}/bin/install_venv.sh
-RUN /s/${HUGO_THEME_DIR}/bin/install_venv.sh
-
-# Hugo
-ADD ${HUGO_THEME_DIR}/bin/install_hugo.sh /s/${HUGO_THEME_DIR}/bin/install_hugo.sh
-RUN /s/${HUGO_THEME_DIR}/bin/install_hugo.sh
-
-# Nodejs
-ADD ${HUGO_THEME_DIR}/bin/install_node.sh /s/${HUGO_THEME_DIR}/bin/install_node.sh
-RUN /s/${HUGO_THEME_DIR}/bin/install_node.sh
-
-# Theme
-ADD config.yaml /s/config.yaml
-ADD content /s/content
-ADD i18n /s/i18n
-ADD data /s/data
-ADD layouts /s/layouts
-ADD static /s/static
-ADD themes /s/themes
-ADD ${HUGO_THEME_DIR}/bin/control.sh /s/${HUGO_THEME_DIR}/bin
+ADD ${HUGO_THEME_DIR}/requirements.txt ${W}/${HUGO_THEME_DIR}/requirements.txt
+ADD \
+    ${HUGO_THEME_DIR}/bin/install_venv.sh \
+    ${HUGO_THEME_DIR}/bin/install_node.sh \
+    ${HUGO_THEME_DIR}/bin/install_hugo.sh \
+    ${HUGO_THEME_DIR}/bin/install.sh \
+    ${W}/${HUGO_THEME_DIR}/bin/
+RUN ${W}/${HUGO_THEME_DIR}/bin/install.sh
+# All later adds will not trigger a reinstall accelerating docker builds
+ADD config.yaml                      ${W}/config.yaml
+ADD content                          ${W}/content
+ADD i18n                             ${W}/i18n
+ADD data                             ${W}/data
+ADD layouts                          ${W}/layouts
+ADD static                           ${W}/static
+ADD themes                           ${W}/themes
+ADD ${HUGO_THEME_DIR}/bin/control.sh ${W}/${HUGO_THEME_DIR}/bin
+RUN ${W}/${HUGO_THEME_DIR}/bin/control.sh infest

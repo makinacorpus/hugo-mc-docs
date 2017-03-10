@@ -3,6 +3,7 @@ SC=${SC:-$(readlink -f $0)}
 THEME=$(dirname $(dirname $SC))
 THEMES=$(dirname $THEME)
 W=$(dirname $THEMES)
+VENV_PATH=${VENV_PATH:-$W/var/venv}
 if [[ "$(basename $THEMES)" != "themes" ]];then
     echo "install this in a correct theme folder layout"
     exit 1
@@ -11,7 +12,4 @@ if [[ -n $DEBUG ]];then
     echo "HUGODIR: $W"
     echo "THEME: $THEME"
 fi
-if [ -e "$W/var/venv/bin/activate" ];then
-    . "$W/var/venv/bin/activate"
-fi
-export SC THEME THEMES W
+export SC THEME THEMES W VENV_PATH

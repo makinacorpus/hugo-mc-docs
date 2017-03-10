@@ -1,36 +1,50 @@
 #!/usr/bin/env bash
+# usage:
+#   $0 serve
+#   $0 gulp
+#   $0 nocmd bash
+
 set -e
 export SC=$(readlink -f "$0")
 export DSC=$(dirname "$SC")
+export TAG=${TAG:-makinacorpus/sysdoc}
 . "$DSC/common" || exit 1
+cd "${W}"
+vv () { echo "$@">&2; "${@}"; }
 if [[ -z $NO_BUILD ]];then
-    set -x
     # handle pb with node_modules that is too heavy
     # and still uploaded to context despite being ignored
     # by dockerignore
-    tar -cf - .\
-        --exclude={.git,var,build,themes/*/*/node_modules} \
-        | docker build -f "themes/$(basename $THEME)/Dockerfile" -t makinacorpus/sysdoc -
     # docker build -t makinacorpus/sysdoc .
-    set +x
+    tar -cf - .\
+        --exclude={.git,var,public,themes/*/*/node_modules} \
+        | docker build -f "themes/$(basename $THEME)/Dockerfile" -t ${TAG} -
 fi
-BMODE=${BMODE:-${@:-hugo_server}}
-case $BMODE in
-    gulp) bcommand="gulp";;
-    hugo_build) bcommand="hugo_build";;
-    *|hugo_server) bcommand="hugo_server";;
-esac
-set -ex
-echo $bcommand
-case $bcommand in
-    gulp*)dargs="";;
-    *)dargs="-p ${LIVERELOAD_PORT:-35729}:35729 -p ${HUGOPORT:-1313}:1313";;
-esac
-exec docker run --rm -ti\
-    $(echo $dargs)\
-    -v "$W/build:/s/build" \
-    -v "$W/docs:/s/docs" \
-    -v "$W/themes:/s/themes" \
-    -v "$W/Makefile:/s/Makefile" \
-    makinacorpus/sysdoc "/s/themes/$(basename $THEME)/bin/control.sh" ${bcommand}
+main() {
+    local cmd=/s/bin/control.sh
+    if [[ "$1" == "nocmd" ]];then
+        cmd=""
+        shift
+    fi
+    local args=${@}
+    case ${args} in
+        serve*)
+            dargs="-p ${LIVERELOAD_PORT:-35729}:35729 -p ${HUGOPORT:-1313}:1313"
+            ;;
+        *)
+            dargs=""
+            ;;
+    esac
+    vv exec docker run --rm -ti \
+        $(echo $dargs) \
+        -v "$W/content:/s/content" \
+        -v "$W/data:/s/data" \
+        -v "$W/i18n:/s/i18n" \
+        -v "$W/layouts:/s/layouts" \
+        -v "$W/public:/s/public" \
+        -v "$W/static:/s/static" \
+        -v "$W/themes:/s/themes" \
+        "$TAG" ${cmd} ${args}
+}
+main "${@}"
 # vim:set et sts=4 ts=4 tw=80:

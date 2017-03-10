@@ -1,4 +1,6 @@
 //GULP STARTER (modified from @dope's project of the same name)
+const fs = require('fs');
+const fileExists = require('file-exists');
 const path = require('path');
 const gulp = require('gulp');
 const babel = require('gulp-babel');
@@ -23,9 +25,18 @@ const cp = require('child_process');
 const hugo_themes_dir = path.dirname(path.dirname(__dirname));
 const hugo_themes_dirname = path.basename(hugo_themes_dir);
 const hugo_dir = path.dirname(hugo_themes_dir);
+
 var server = require('gulp-server-livereload');
 var doc_root = hugo_dir + '/public';
-
+var isDocker = false;
+try {
+    var fileContent = fs.readFileSync("/proc/1/cgroup", 'utf8');
+} catch(err)  {
+    var fileContent = '';
+}
+var isDocker = fileContent.match(/docker/);
+if (isDocker) console.log('Running from inside docker');
+var host = isDocker ? '0.0.0.0': '127.0.0.1';
 
 /**
  *
@@ -161,6 +172,7 @@ if(within_hugo) {
                     path: doc_root,
                     options: undefined
                 },
+                host: host,
                 open: false,
                 port: 1313,
             }));
