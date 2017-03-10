@@ -41,22 +41,17 @@ call_gulp() {
 }
 infest() {
     cd "$W"
-    ln -fvs themes/hugo-mc-docs/Dockerfile
-    ln -fvs themes/hugo-mc-docs/requirements.txt
     if [ ! -e bin ];then mkdir bin;fi
-    ln -fvs ../themes/hugo-mc-docs/bin/install_node.sh  bin/
-    ln -fvs ../themes/hugo-mc-docs/bin/install_hugo.sh  bin/
-    ln -fvs ../themes/hugo-mc-docs/bin/install_venv.sh  bin/
-    ln -fvs ../themes/hugo-mc-docs/bin/control.sh       bin/
-    ln -fvs ../themes/hugo-mc-docs/bin/docker_build.sh  bin/
+    ln -fvs ../themes/hugo-mc-docs/bin/control.sh bin/
+    ln -fvs ../themes/hugo-mc-docs/bin/docker.sh  bin/
 }
 install() {
     cd "$W"
     infest
     for sc in \
-        bin/install_venv.sh \
-        bin/install_node.sh \
-        bin/install_hugo.sh;do
+        $THEME/bin/install_venv.sh \
+        $THEME/bin/install_node.sh \
+        $THEME/bin/install_hugo.sh;do
         echo "Running $sc" >&2
         if ! ( $sc );then
             echo "$sc failed"

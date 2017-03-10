@@ -12,5 +12,5 @@ if [ ! -e venv/bin/activate ];then
     virtualenv --no-site-packages venv
 fi
 . venv/bin/activate
-pip install --upgrade -r requirements.txt
+pip install --upgrade -r $THEME/requirements.txt
 # vim:set et sts=4 ts=4 tw=80:
