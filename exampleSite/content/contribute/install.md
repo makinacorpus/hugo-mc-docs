@@ -59,7 +59,7 @@ sudo apt-get install -y sqlite3 liblcms2-2 liblcms2-dev libcairomm-1.0-dev \
 ``` sh
 git clone https://gitlab.foo.net/docu/tation
 cd tation
-themes/hugo-mc-docs/bin/control.sh intall
+themes/hugo-mc-docs/bin/control.sh install
 ```
 
 ### Installation avec docker
