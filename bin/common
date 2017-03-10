@@ -14,3 +14,4 @@ fi
 if [ -e "$W/var/venv/bin/activate" ];then
     . "$W/var/venv/bin/activate"
 fi
+export SC THEME THEMES W

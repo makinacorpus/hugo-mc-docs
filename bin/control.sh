@@ -42,8 +42,16 @@ call_gulp() {
 infest() {
     cd "$W"
     if [ ! -e bin ];then mkdir bin;fi
-    ln -fvs ../themes/hugo-mc-docs/bin/control.sh bin/
-    ln -fvs ../themes/hugo-mc-docs/bin/docker.sh  bin/
+    for i in "${W}/bin" "${W}/venv/bin";do
+        ln -fvs ../themes/hugo-mc-docs/bin/control.sh "${i}"
+        ln -fvs ../themes/hugo-mc-docs/bin/docker.sh  "${i}"
+        ln -fs "$W/var/node/bin/node"   "${i}"
+        ln -fs "$W/var/node/bin/nodejs" "${i}"
+        ln -fs "$W/var/node/bin/npm"    "${i}"
+        ln -fs "$W/var/node/bin/yarn"   "${i}"
+        ln -fs "$W/var/hugo/hugo"       "${i}"
+    done
+
 }
 install() {
     cd "$W"
@@ -58,6 +66,7 @@ install() {
             exit 1
         fi
     done
+    pip install --upgrade -r $THEME/requirements.txt
     echo "Install success"
 }
 main() {

@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 set -e
-export SC=$(readlink -f "$0")
-export DSC=$(dirname "$SC")
-. "$DSC/common" || exit 1
+W=${W:-$(pwd)}
 cd "$W"
+export VENV_PATH=${VENV_PATH:-${W}/var/venv}
 if ! (hash -r virtualenv);then
     echo "install virtualenv please !"
     exit 1
 fi
-if [ ! -e var/venv/bin/activate ];then
-    virtualenv --no-site-packages var/venv
+if [ ! -e "${VENV_PATH}"/bin/activate ];then
+    virtualenv --no-site-packages "${VENV_PATH}"
 fi
-. var/venv/bin/activate
-pip install --upgrade -r $THEME/requirements.txt
+. "${VENV_PATH}"/bin/activate
+ls -1 "${VENV_PATH}/bin/python"
 # vim:set et sts=4 ts=4 tw=80:
