@@ -1,9 +1,5 @@
 # MakinaCorpus documentation Theme for hugo
 
-## intro
-- Install it in themes/ folder of your hugo project
-- To bootstrap your theme
-
 ## install/usage
 
 ```sh
