@@ -7,7 +7,13 @@
     ```sh
     mkdir hugoproject
     cd hugoproject
+    git init
+    mkdir content data layouts i18n public static
     git submodule add https://github.com/makinacorpus/hugo-mc-docs.git themes/hugo-mc-docs
+    cd themes/hugo-mc-docs/exampleSite
+    cp -r ../.gitignore * ../../..
+    git add .
+    git commit -am init
     ```
 - non docker
 
