@@ -8,9 +8,9 @@ if ! (hash -r virtualenv);then
     echo "install virtualenv please !"
     exit 1
 fi
-if [ ! -e venv/bin/activate ];then
-    virtualenv --no-site-packages venv
+if [ ! -e var/venv/bin/activate ];then
+    virtualenv --no-site-packages var/venv
 fi
-. venv/bin/activate
+. var/venv/bin/activate
 pip install --upgrade -r $THEME/requirements.txt
 # vim:set et sts=4 ts=4 tw=80:

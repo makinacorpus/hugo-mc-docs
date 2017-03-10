@@ -9,7 +9,7 @@ if [[ -z $NO_BUILD ]];then
     # and still uploaded to context despite being ignored
     # by dockerignore
     tar -cf - .\
-        --exclude={venv,.git,var,build,themes/*/*/node_modules} \
+        --exclude={.git,var,build,themes/*/*/node_modules} \
         | docker build -f "themes/$(basename $THEME)/Dockerfile" -t makinacorpus/sysdoc -
     # docker build -t makinacorpus/sysdoc .
     set +x

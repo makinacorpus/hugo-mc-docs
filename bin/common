@@ -11,6 +11,6 @@ if [[ -n $DEBUG ]];then
     echo "HUGODIR: $W"
     echo "THEME: $THEME"
 fi
-if [ -e "$W/venv/bin/activate" ];then
-    . "$W/venv/bin/activate"
+if [ -e "$W/var/venv/bin/activate" ];then
+    . "$W/var/venv/bin/activate"
 fi
