@@ -32,5 +32,5 @@ exec docker run --rm -ti\
     -v "$W/docs:/s/docs" \
     -v "$W/themes:/s/themes" \
     -v "$W/Makefile:/s/Makefile" \
-    makinacorpus/sysdoc "/s/bin/control.sh" ${bcommand}
+    makinacorpus/sysdoc "/s/themes/$(basename $THEME)/bin/control.sh" ${bcommand}
 # vim:set et sts=4 ts=4 tw=80:
