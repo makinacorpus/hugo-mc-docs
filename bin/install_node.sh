@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
-export NODE_VERSION=${NODE_VERSION:-7.7.1}
-export YARN_VERSION=${YARN_VERSION:-0.21.3}
 set -e
 W=${W:-$(pwd)}
+export NODE_VERSION=${NODE_VERSION:-7.7.1}
+export YARN_VERSION=${YARN_VERSION:-0.21.3}
+export KEYSERVER=${KEYSERVER:-keyserver.ubuntu.com}
+export NODEPATH=${NODEPATH:-${W}/var/nodejs}
 cd "$W"
 vv () { echo "$@">&2; "${@}"; }
 shaverify() { echo "$1 $2" | sha256sum -c - >/dev/null 2>&1; }
 shafverify() { grep " $1" "$2" 2>/dev/null| sha256sum -c - >/dev/null 2>&1; }
 v() { shafverify node-v$NODE_VERSION-linux-x64.tar.xz SHASUMS256.txt.asc; }
 jv() { gpg -q --batch --verify yarn.js.asc yarn.js 2>/dev/null; }
-export NODE_INSTALL=${NODE_INSTALL:-y}
-export KEYSERVER=${KEYSERVER:-keyserver.ubuntu.com}
-export KEYSERVER=${KEYSERVER:-ha.pool.sks-keyservers.net}
-export NODEPATH=${NODEPATH:-${W}/var/nodejs}
 if [ ! -e ${NODEPATH} ];then mkdir -p ${NODEPATH};fi
 cd $NODEPATH
 keys="\

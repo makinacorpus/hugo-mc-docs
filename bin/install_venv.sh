@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 W=${W:-$(pwd)}
-cd "$W"
 export VENV_PATH=${VENV_PATH:-${W}/var/venv}
+cd "$W"
 if ! (hash -r virtualenv);then
     echo "install virtualenv please !"
     exit 1
