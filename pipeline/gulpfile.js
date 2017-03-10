@@ -163,7 +163,7 @@ gulp.task('default', tasks);
 gulp.task('watch', ['default'], watcher);
 if(within_hugo) {
     gulp.task('serve', ['watch'], function(cb) {
-        console.log(hugo_dir+'/public');
+        // console.log(hugo_dir+'/public');
         return gulp.src(doc_root)
             .pipe(server({
                 livereload: true,
