@@ -25,7 +25,7 @@ git commit -am init
     themes/hugo-mc-docs/bin/control.sh serve
     ```
 
-- Via docker, not that the script will start the gulp development server after build
+- Via docker, note that the script will start the gulp development server after build
 
     ```sh
     themes/hugo-mc-docs/bin/docker.sh
