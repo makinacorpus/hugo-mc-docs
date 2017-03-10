@@ -9,6 +9,7 @@
     git submodule add https://github.com/makinacorpus/hugo-mc-docs.git themes/hugo-mc-docs
     ```
 - non docker
+
     ```sh
     themes/hugo-mc-docs/bin/control.sh install
     # This start the gulp development server after build)
@@ -16,10 +17,12 @@
     ```
 
 - Via docker, not that the script will start the gulp development server after build
+
     ```sh
     themes/hugo-mc-docs/bin/docker.sh
     ```
 - Create a content
+
     ```sh
     ./bin/control.sh hugo new content/doc.md
     ```
