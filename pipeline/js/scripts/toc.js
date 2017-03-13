@@ -1,4 +1,6 @@
-//IIFE to remove all third-level li's from TOC so as not to negatively affect scrollspy (these are currently hidden anyway)
+/*
+// IIFE to remove all third-level li's from TOC
+// so as not to negatively affect scrollspy (these are currently hidden anyway)
 (function() {
   let toc = document.getElementById('toc') ? true : false;
   if (toc) {
@@ -10,6 +12,7 @@
     }
   }
 })();
+*/
 
 $(document).ready(function() {
   // Cache selectors
@@ -53,4 +56,14 @@ $(document).ready(function() {
       }
     }
   });
+});
+
+$('.body-copy').on('click', function() {
+    if ($('#toc-toggle.toc-open')) {
+        $('#toc').removeClass('toc-open');
+        $('#toc-toggle').removeClass('toc-open');
+    } else {
+        $('#toc').addClass('toc-open');
+        $('#toc-toggle').addClass('toc-open');
+    }
 });

@@ -3,16 +3,13 @@ $(document).ready(function() {
         console.log($(val).find('a.menu-item-link.open').length);
         if($('a.menu-item-link.open', $(val)).length) {
             $(val).show();
-            // $('ul', val).each(function(a, b){b.show();});
-            console.log(val);
-            console.log($('ul', val));
         }
     });
 });
 function activatelevelnav(level) {
   $('.menu-item-link-'+level+'.has-children').on('click', function(evt) {
-    evt.preventDefault();
-    evt.stopPropagation();
+    // evt.preventDefault();
+    // evt.stopPropagation();
     var $ul = $(this).next('ul'),
     siblingLinks = $(
      '.menu-item-link-'+level+'.has-children.open'
@@ -35,22 +32,20 @@ function activatelevelnav(level) {
   });
 }
 for (var i = 1; i <= 10; i++) { activatelevelnav(i); }
-//toggle off-canvas navigation for M- screens
-$('#navigation-toggle').on('click', function(evt) {
-  evt.preventDefault();
-  evt.stopPropagation();
-  $('#site-navigation,.all-content-wrapper,#navigation-toggle,#site-footer').toggleClass('navigation-open');
+$(document).ready(function() {
+  $(".trigger").on("click", function(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    $(".navbutton__wrapper").toggleClass("nav__wrapper--active");
+    $('#site-navigation,.all-content-wrapper').toggleClass('navigation-open');
+  });
 });
-//close navigation if body content is clicked when docs are open
+
+// close navigation if body content is clicked when docs are open
 $('#all-content-wrapper').on('click', function() {
   if ($('.site-navigation.navigation-open')) {
-    $('.site-navigation.navigation-open,.all-content-wrapper.navigation-open,#navigation-toggle,#site-footer').removeClass('navigation-open');
+    $('.site-navigation.navigation-open,.all-content-wrapper.navigation-open').removeClass('navigation-open');
+    $('.navbutton__wrapper.nav__wrapper--active').removeClass('nav__wrapper--active');
   }
 });
 
-$('.body-copy').on('click', function() {
-  if ($('.toc-toggle.toc-open')) {
-    document.getElementById('toc').classList.remove('toc-open');
-    document.getElementById('toc-toggle').classList.remove('toc-open');
-  }
-});

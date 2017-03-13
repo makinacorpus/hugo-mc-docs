@@ -2,8 +2,13 @@ aside#toc {
   position: fixed;
   max-width: $site-navigation-width;
   min-width: $site-navigation-width;
-  overflow-y: scroll;
   max-height: calc(100vh - #{$site-header-height} - 40px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-right: -17px !important;
+  .toc-inner-wrapper {
+    padding-right: 17px !important;
+  }
   padding: {
     left: .5em;
     right: .5em;
@@ -41,21 +46,18 @@ aside#toc {
   @include MQ(XL) {
     .toc-inner-wrapper {
       position: relative;
-      min-height: calc(100vh - #{$site-header-height} - #{$site-footer-height-l-plus});
-      max-height: calc(100vh - #{$site-header-height} - #{$site-footer-height-l-plus});
-      overflow-y: scroll;
+      min-height: calc(100vh - 20px - #{$site-header-height} - #{$site-footer-height-l-plus});
+      max-height: calc(100vh - 20px - #{$site-header-height} - #{$site-footer-height-l-plus});
     }
     box-shadow: none;
     top: $site-header-height;
     right: 0px;
     bottom: auto;
     opacity: 1;
-    min-height: calc(100vh - #{$site-header-height} - #{$site-footer-height-l-plus});
-    max-height: calc(100vh - #{$site-header-height} - #{$site-footer-height-l-plus});
+    min-height: calc(100vh - 20px - #{$site-header-height} - #{$site-footer-height-l-plus});
+    max-height: calc(100vh - 20px - #{$site-header-height} - #{$site-footer-height-l-plus});
     transform: scale(1);
     border-radius: 0px;
-    margin-right: 1.5em;
-    // padding-bottom:20px;
     .fade {
       content: '';
       display: inline-block;
@@ -77,7 +79,6 @@ nav#TableOfContents {
   position: relative;
   margin-bottom: 20px;
   height: auto;
-  overflow-y: scroll;
   li code {
     font-family: $base-font-family;
   }
@@ -185,33 +186,32 @@ a#toc-toggle {
 aside#toc + a#toc-toggle {
   display: block;
   position: fixed;
-  bottom: 40px;
-  right: 20px;
+  bottom: 17px;
+  right: 17px;
   background-color: $toc-bg-color;
-  color: $hugo-white;
-  background-color: $hugo-pink;
+  color: $base-font-color;
   @include size(40px);
-  z-index: 99;
+  z-index: 30;
   line-height: 50px;
   text-align: center;
   border-radius: 5px;
   &:after {
-    content: '\2026';
+    content: "\00D7";
     display: block;
     position: relative;
     width: 40px;
     height: 40px;
     font-size: 2em;
     line-height: 40px;
-    bottom: 10px;
+    bottom: 4px;
   }
   &.toc-open {
     box-shadow: none;
-    background-color: $toc-bg-color;
-    color: $base-font-color;
+    color: $hugo-white;
+    background-color: $hugo-pink;
     &::after {
-      content: "\00D7";
       font-size: 2em;
+      content: '\2026';
       bottom: 0px;
     }
     &:hover {

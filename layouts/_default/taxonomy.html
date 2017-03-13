@@ -5,7 +5,9 @@
 			<h1 class="page-title"><a href="/{{.Data.Plural}}"><i class="icon-{{.Data.Plural}}"></i>{{.Data.Plural}}:</a>&nbsp;{{ replace .Title "-" " "}}</h1>
 		</header>
 		<div class="body-copy taxonomies">
-			{{partial "contents-list.html" . }}
+      {{ .Scratch.Set "list_class" "tag-items-list" }}
+      {{ .Scratch.Set "listitem_class" "tag-item" }}
+			{{ partial "contents-list.html" . }}
 		</div>
 	</div>
 </main>

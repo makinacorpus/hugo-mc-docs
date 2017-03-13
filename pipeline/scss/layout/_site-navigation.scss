@@ -1,15 +1,19 @@
 .site-navigation::-webkit-scrollbar {
   display: none;
 }
-
+.site-navigation-wrapper {
+  margin-right: -17px !important;
+  overflow: hidden;
+  overflow-y: scroll;
+}
 .site-navigation {
+  padding-right: 17px !important;
   transition: transform .3s ease-in-out;
   position: fixed;
   left: 0px;
   top: 0px;
-  width: $site-navigation-width;
   bottom: 0px;
-  overflow-y: scroll;
+  width: $site-navigation-width;
   background-color: $site-navigation-bg-color;
   transform:translateX(-#{$site-navigation-width});
   padding: 0px;
@@ -125,59 +129,4 @@
   }
 }
 
-.navigation-toggle-wrapper.navigation-open .top {
-  transform: rotate(45deg);
-  top: 40%;
-  border-radius: 5px;
-  background-color: $hugo-pink;
-  border-color: $hugo-pink;
-}
 
-.navigation-toggle-wrapper.navigation-open .middle {
-  width: 40px;
-  height: 40px;
-  top: 4%;
-  border-radius: 50%;
-  background-color: $hugo-pink;
-  border-color: $hugo-pink;
-  opacity: 0.3;
-}
-
-.navigation-toggle-wrapper.navigation-open .bottom {
-  transform: rotate(-45deg);
-  top: 40%;
-  border-radius: 5px;
-  background-color: $hugo-pink;
-  border-color: $hugo-pink;
-}
-
-.bar {
-  width: 40px;
-  height: 2px;
-  border: 2px solid $hugo-blue;
-  background-color: $hugo-blue;
-  position: absolute;
-  border-radius: 10px;
-  &.navigation-open {
-    background-color: $hugo-pink;
-    border: 2px solid $hugo-pink;
-  }
-}
-
-.top {
-  left: 15%;
-  top: 20%;
-  transition: all 0.5s;
-}
-
-.middle {
-  left: 15%;
-  top: 40%;
-  transition: all 0.5s;
-}
-
-.bottom {
-  left: 15%;
-  top: 60%;
-  transition: all 0.5s;
-}

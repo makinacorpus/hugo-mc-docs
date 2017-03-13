@@ -59,29 +59,14 @@
 }
 
 .header-content {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  color: $hugo-white;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 50%;
+  margin-left: 40em;
+  margin-right: auto;
+  color: $hugo-white;
   max-width: $M;
-  .footer-info {
-    width: 100%;
-    span {
-      width: 100%;
-      display:block;
-      text-align: center;
-      margin-top:1em;
-      @include MQ(M){
-        margin-top:0px;
-      }
-    }
-    @include MQ(M) {
-      width: 200px;
-    }
-  }
   img {
     max-width: 140px;
     margin-left: auto;
@@ -100,7 +85,6 @@
     }
   }
 }
-     
 
 .header-list {
   display: flex;
@@ -111,10 +95,11 @@
   margin-left: 0px;
   padding-left: 0px;
   max-width: auto;
-  margin-right: 200em;
+  margin-right: 100em;
   margin: 0px;
   flex-wrap: wrap;
   ul {
+    text-align: left;
     list-style: none;
     li a {
       color: $hugo-white;
@@ -122,5 +107,3 @@
     }
   }
 }
- 
-

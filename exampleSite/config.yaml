@@ -18,7 +18,7 @@ params:
   sitedescription: "docs"
   release: "1"
   description: "documentation"
-  logo: "MakinaCorpus_logo_vert_blanc.svg"
+  logo: "/images/MakinaCorpus_logo_vert_blanc.svg"
   favicon: "favicon.ico"
   siteaddress: "https://foo.net"
   ghrepo: "https://gitlab.foo.net/doc/umentation"

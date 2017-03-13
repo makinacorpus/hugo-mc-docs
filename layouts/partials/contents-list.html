@@ -1,15 +1,17 @@
-<div class="all-contents" style="display:none">
-  <ul>
+<div class="all-contents">
+  {{ $list_class := $.Scratch.Get "list_class" | default "list" }}
+  {{ $listitem_class := $.Scratch.Get "listitem_class" | default "listitem" }}
+  <ul class="{{ $list_class }}">
     {{ range .Pages }}
     {{ $kind := .Kind }}
     {{ $cdummy := index .Params "dummy" | default false }}
     {{ if not $cdummy }}
-    <li>
+    <li class="{{ $listitem_class }}">
       <a {{ with .Params.sitelink }}href="{{.}} "target="_blank"{{else}}href="{{.Permalink}}"{{end}}>
         <section class="contents-list {{ $kind }}">
           <header>
             <h3 class="list-icon {{.Section}}">
-              {{.Title | markdownify}}{{with .Params.sitelink }}&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>{{end}}
+              {{.Title | markdownify}}&nbsp;({{ .URL }}){{with .Params.sitelink }}&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>{{end}}
             </h3>
           </header>
           <p>{{.Description | markdownify }}</p>

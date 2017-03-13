@@ -34,6 +34,14 @@
     margin-bottom: 16px;
   }
 }
+ul.tag-items-list {
+  list-style-type: none;
+  li {
+    a {
+      line-height: 10px;
+    }
+  }
+}
 
 .taxonomy-term {
   font-size: 1.3em;

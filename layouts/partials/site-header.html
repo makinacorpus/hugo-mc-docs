@@ -1,15 +1,18 @@
 {{$version := .Site.Params.release }}
 <header id="site-header" class="site-header">
   <div class="hugo-meta" title="Hugo version {{$version}}">
-  <a href="/" id="home-link">
-    <img src="{{ "images/MakinaCorpus_logo_vert_blanc.svg" | relURL}}" alt="">
-  </a>
-  </div>
-  <div class="header-content">
-  <div class="header-list">
-    <ul>
-      <li><a href="{{.Site.Params.ghrepo}}" target="_blank"><i class="icon-github"></i> Source</a></li>
-    </ul>
-  </div>
-  </div>
+    <a href="/" id="home-link">
+      <img src="{{ .Site.Params.logo | relURL}}" alt="">
+      </a>
+    </div>
+    <div class="header-content">
+      <div class="header-list">
+        <ul>
+          <li>
+            <a href="{{.Site.Params.ghrepo}}"
+              target="_blank"><i class="icon-github"></i> Source</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 </header>
