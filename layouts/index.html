@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $dummy := index .Params "dummy" | default false }}
+{{ $hidden_from_list := index .Params "hidden_from_list" | default false }}
 {{ $title := .Title }}
 <main class="main">
   <div class="content">
@@ -18,8 +18,8 @@
       <ul>
         {{ range .Pages }}
         {{ $kind := .Kind }}
-        {{ $cdummy := index .Params "dummy" | default false }}
-        {{ if not $cdummy }}
+        {{ $chidden_from_list := index .Params "hidden_from_list" | default false }}
+        {{ if not $chidden_from_list }}
         <li>
           <a {{ with .Params.sitelink }}href="{{.}} "target="_blank"{{else}}href="{{.Permalink}}"{{end}}>
             <section class="contents-list {{ $kind }}">

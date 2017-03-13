@@ -9,9 +9,8 @@ linktitle: ""
 publishdate: ""
 slug: ""
 tags: []
-title: dummy
 toc: false
 weight: 0
-dummy: true
+hidden_from_list: true
 ---
 

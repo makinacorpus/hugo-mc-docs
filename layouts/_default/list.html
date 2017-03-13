@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $dummy := index .Params "dummy" | default false }}
+{{ $hidden_from_list := index .Params "hidden_from_list" | default false }}
 {{ $title := .Title }}
 <main class="main">
   <div class="content">
