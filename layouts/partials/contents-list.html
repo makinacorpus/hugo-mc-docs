@@ -2,9 +2,7 @@
   {{ $list_class := $.Scratch.Get "list_class" | default "list" }}
   {{ $listitem_class := $.Scratch.Get "listitem_class" | default "listitem" }}
   <ul class="{{ $list_class }}">
-  {{ . }}
     {{ range .Pages }}
-    {{- .Type -}} {{ .Layout }} {{.Kind}}
     {{ $kind := .Kind }}
     {{ $chidden_from_list := index .Params "hidden_from_list" | default false }}
     {{ if not $chidden_from_list }}
