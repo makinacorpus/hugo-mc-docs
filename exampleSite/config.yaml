@@ -75,17 +75,14 @@ menu:
     - URL: /
       Name: "Home"
       identifier: home
-      Weigth: 1000
-      weigth: 1000
+      weight: 1000
     - URL: /asection/
       Name: "A section"
       identifier: asection
-      Weigth: 2000
-      weigth: 2000
+      weight: 2000
     - URL: /bsection/
       Name: "B section"
       identifier: bsection
-      Weigth: 3000
-      weigth: 3000
+      weight: 3000
 ---
 # vim: set et:
