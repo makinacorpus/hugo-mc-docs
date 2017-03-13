@@ -40,3 +40,7 @@ git commit -am init
     on local folders along the project (./var).
 - naviguation is inspired from Material themes
 - Livesearch is enabled throrough lunr.js and a special crafted (via hugo at build time) JSON file.
+
+
+## Credits
+- Largely inspired from Mkdocs, material themes around and hugo docs theme itself
