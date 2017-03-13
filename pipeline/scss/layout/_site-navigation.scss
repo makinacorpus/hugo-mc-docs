@@ -36,9 +36,9 @@
     display: flex;
   }
   ul.menu {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 85%;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    width: 90%;
     @include MQ(L) {
       margin-top: $site-header-height + 10px;
     }
@@ -52,7 +52,7 @@
     }
     li {
       padding-left: 0px;
-      line-height: 1.2;
+      line-height: 1.0;
       padding-top: .65em;
       ul li {
         padding-left: .6em;
@@ -76,34 +76,33 @@
   ul.menu-1 {
     margin-top: $site-header-height + 30px;
   }
-  ul.menu-2, ul.menu-3, ul.menu-4 {
+  ul.menu-2,
+	ul.menu-3,
+	ul.menu-4,
+	ul.menu-5,
+	ul.menu-6,
+	ul.menu-7,
+	ul.menu-8,
+	ul.menu-9,
+	ul.menu-10 {
     display: none;
     margin-top: 0px;
-    padding-top: 10px;
+    padding-top: 5px;
   }
-  ul.menu-2 li, ul.menu-3 li, ul.menu-4 li{
-  }
-  ul.menu-1 {
+  ul.menu-1, ul.menu-2 {
     li { line-height: 1.0; }
     a.menu-item-link-2 { font-size: 16px; }
   }
   ul.menu-2 {
-    li { line-height: 1.0; }
     a.menu-item-link-2 { font-size: 15px; }
   }
-  ul.menu-3 {
-    li { line-height: 0.8; }
-    a.menu-item-link-3 { font-size: 14px; }
+  ul.menu-3,
+  ul.menu-4, ul.menu-5, ul.menu-6, ul.menu-7,
+  ul.menu-8, ul.menu-9, ul.menu-10 {
+   a.menu-item-link-4 { font-size: 14px; }
   }
-  ul.menu-4 {
-   li { line-height: 0.7; }
-   a.menu-item-link-4 { font-size: 12px; }
-  }
-
-  ul.menu-1.open,
-  ul.menu-2.open,
-  ul.menu-3.open,
-  ul.menu-4.open,
+  ul.menu-1.open, ul.menu-2.open, ul.menu-3.open, ul.menu-4.open, ul.menu-5.open,
+  ul.menu-6.open, ul.menu-7.open, ul.menu-8.open, ul.menu-9.open, ul.menu-10.open,
   ul.menu.open {
     display:block;
   }
