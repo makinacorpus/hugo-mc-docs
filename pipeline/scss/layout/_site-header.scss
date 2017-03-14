@@ -1,109 +1,56 @@
 .site-header {
-  width: 100%;
-  height: $site-header-height;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  @include MQ(M) {
+    flex-wrap: nowrap;
+  }
+  width: 100%;
+  height: $site-header-height;
   margin: 0px;
-  background-color: $site-header-bg-color;
   color: $site-header-color;
+  background-color: $site-header-bg-color;
   position: fixed;
   top: 0px;
   left: 0px;
   z-index: 20;
   @include card(1);
-  @include MQ(L) {
-    justify-content: space-between;
-  }
   .hugo-meta {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    @include MQ(L) {
-      float: left;
-      width: auto;
-      justify-content: flex-start;
-      // max-width: 200px;
-    }
-  }
-  #home-link {
-    display: flex;
-    align-items: center;
-    font-size: .8em;
-    margin-left: 1.5em;
-    img {
-      height: $site-header-height * .7;
-      margin-right: .25em;
-    }
-    .hugo-v {
-      align-self: flex-end;
-      font-size: .9em;
-    }
-  }
-  a.github-button {
-    display: none;
+    width: 35px;
+    margin-top: 5px;
+    margin-left: 42px;
+    margin-right: 0px;
     @include MQ(M) {
-      display: inline;
+      margin-right: 42px;
     }
-  }
-  //github buttons in site-header
-  iframe[src^="https://buttons.github.io"] {
-    display: none;
-    @include MQ(M) {
-      display: inline;
-    }
-    margin-left: 1em;
-  }
-}
-
-.header-content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 50%;
-  margin-left: 40em;
-  margin-right: auto;
-  color: $hugo-white;
-  max-width: $M;
-  img {
-    max-width: 140px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  @include MQ(M) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    div {
-      min-width: 120px;
-      // width: 50%;
-      // max-width: 50%;
-    }
-  }
-}
-
-.header-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: $hugo-white;
-  list-style: none;
-  margin-left: 0px;
-  padding-left: 0px;
-  max-width: auto;
-  margin-right: 100em;
-  margin: 0px;
-  flex-wrap: wrap;
-  ul {
-    text-align: left;
-    list-style: none;
-    li a {
-      color: $hugo-white;
+    align-self: flex-start;
+    #home-link {
       font-size: .8em;
+      img {
+        height: $site-header-height * .7;
+        margin-right: .25em;
+      }
+      .hugo-v {
+        align-self: flex-end;
+        font-size: .9em;
+      }
+    }
+  }
+  #goto-source {
+    margin: 10px;
+    padding: auto;
+    @include MQ(M) {
+      margin-right: 42px;
+    }
+    color: $hugo-white;
+    ul {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      li a {
+        color: $hugo-white;
+        font-size: .8em;
+      }
     }
   }
 }

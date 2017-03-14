@@ -1,33 +1,27 @@
 <!--layouts/partials/site_header/site_search_form.html-->
-<!--BEGIN FORM-->
-<a href="#" id="search-button" role="button">
-	<span> Press <em>S</em> to search</span><i class="icon-search">
-</i>
-</a>
-<form action=""
-	id="site-search"
-	class="search-form"
-	role="search">
-	<a href="#" id="close-search"><i class="icon-cancel"></i></a>
-	<input type="search"
-			id="search-input"
-			aria-label="Search the {{ .Site.Title }} website..."
-			class="site-search"
-			autocomplete="off"
-			placeholder="Search documentation..." required>
-		<ul id="search-results">
-	         <!-- The following <li> can be uncommented for styling purposes, but these reflect the same css classes included in the script. -->
-		    <!-- <li class="search-result">
-		        <a href="#"><h5>Sample Search Result Heading</h5></a>
-		        <p>Here is a simple description area that should be kept relatively short, but just in case, let's make this a little bit longer.</p>
-		        <div class="in-section">Found in: Digital Content Writers Guide</div>
-		        <ul class="tags">
-		            <li><i class="icon-tags"></i></li>
-		            <li><a href="#" class="tag">sushi</a></li>
-		            <li><a href="#" class="tag">japanese</a></li>
-		        </ul>
-		    </li> -->
-		</ul>
-    <div class="press-escape"
-         title="Press Escape to Close the Site Search Overlay">Press <em>ESC</em> to close.</div>
-</form>
+<div id="search-wrapper">
+  <form action="" id="search-form" role="search">
+    <label for="search" class="icon-search" id="search-button"></label>
+    <input type="search" id="search-input" class="site-search"
+        autocomplete="off"
+        aria-label="Search the {{ .Site.Title }} website..."
+        placeholder="Search..." required />
+    <input type="hidden" id="search-index" value="{{ .Site.HomeAbsURL }}site-index.json"/>
+  </form>
+</div>
+<div id="search-results-wrapper">
+  <div id="search-results-count"></div>
+  <ul id="search-results">
+    <!-- The following <li> can be uncommented for styling purposes, but these reflect the same css classes included in the script. -->
+    <!-- <li class="search-result">
+      <a href="#"><h5>Sample Search Result Heading</h5></a>
+      <p>Here is a simple description area that should be kept relatively short, but just in case, let's make this a little bit longer.</p>
+      <div class="in-section">Found in: Digital Content Writers Guide</div>
+      <ul class="tags">
+        <li><i class="icon-tags"></i></li>
+        <li><a href="#" class="tag">sushi</a></li>
+        <li><a href="#" class="tag">japanese</a></li>
+      </ul>
+    </li> -->
+  </ul>
+</div>

@@ -1,6 +1,5 @@
-
 //Config
-$usefontawesome: true;
+$usefontawesome: false;
 
 //Media Query Values
 $S:480px;
@@ -28,11 +27,8 @@ $hugo-green:#00A88A;
 $hugo-green-light:#33BA91;
 $hugo-green-ddark:darken($hugo-green, 10%);
 $hugo-green-dark:darken($hugo-green, 20%);
-
-$search-result-border-color:$hugo-pink;
-$search-result-title-background-color-hover:$hugo-white;
-$search-result-title-background-color:$hugo-white;
-$search-result-title-color:$hugo-gray;
+$blue: $hugo-blue;
+$pink: $hugo-pink;
 
 $warning-color:$hugo-yellow;
 $cap-black:$hugo-black;
@@ -41,7 +37,14 @@ $cap-black:$hugo-black;
 $tag-font-size-tablet-plus:25px;
 $tag-background-color:$hugo-white;
 $tag-font-color:$hugo-black;
-$tag-background-color-hover:$hugo-green-light;
+$tag-background-color-hover:$hugo-white;
+$tag-bg-color:$hugo-gray-ultra-light;
+
+$search-result-border-color:$hugo-pink;
+$search-result-title-background-color-hover:$hugo-white;
+$search-result-title-background-color:$hugo-white;
+$search-result-title-color:$hugo-gray;
+$search-button-color: $hugo-white;
 
 //Examples
 $examplesite-example-color:$hugo-pink;
@@ -54,11 +57,16 @@ $body-bg-color:$hugo-white;
 
 //Typography
 $base-font-size: 18px;
-$base-font-color: #222222;
+$base-font-color: black;
 $base-line-height-content: 1.6;
 $base-font-bold-color: $base-font-color;
+
+$search-button-font: "Lucida Console", "Courier New", courier, monaco, monospace;
 $systemfonts: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbols";
 // Font Families
+$family-serif: "Georgia", serif;
+$family-primary: $family-serif;
+$code-font-family: 'courierprime',courier,monospace;
 $base-font-family: 'museo-sans','muli',$helvetica;
 $heading-font-family: $base-font-family;
 $code-font-family:'robotomono',courier,monospace;
@@ -82,11 +90,14 @@ $base-button-text-color: $hugo-white;
 $button-border-radius: 3px;
 
 
+// CodePre
+$inline-code-bg-color: rgba(27,31,35,0.13);
+$inline-code-text-color:$base-font-color;
+
 // Codeblocks
 //// monokai
 $code-error-color: #960050;
 $code-error-bg-color: #1e0010;
-$inline-code-bg-color: #333;
 $code-comment-color: #75715e;
 $code-kw-color: #66d9ef;
 $code-numbers-color: #ae81ff;
@@ -94,10 +105,9 @@ $code-names-color: #f8f8f2;
 $code-literals-color: #e6db74;
 $code-operator-color: #f92672;
 $code-scope-color: #a6e22e;
+$code-block-bg-color: #333;
 
 ////
-$code-block-bg-color: $inline-code-bg-color;
-$code-font-family:'courierprime',courier,monospace;
 $code-tooltip-bg-color: $hugo-blue;
 $code-block-base-font-color: $hugo-black;
 $code-editor-header-base-bg-color: $input-example-color;
@@ -105,7 +115,6 @@ $code-filename-color: #ffffff;
 $code-copy-button-color:#ffffff;
 $code-copy-button-text-color:$base-font-color;
 $code-base-font-color: $hugo-pink-light;
-$inline-code-text-color:$base-font-color;
 
 //Sidebar & Breadcrumb
 $site-navigation-width: 250px;
@@ -121,35 +130,12 @@ $toc-bg-color:$body-bg-color;
 //Headers
 $site-header-height:50px;
 $site-header-bg-color:$hugo-gray-dark;
-$site-header-color:$hugo-green-dark;
-$site-header-color-dark:$hugo-green-ddark;
+$site-header-color:$hugo-white;
+$site-header-color-dark:$hugo-white;
 $site-header-color-hover:$hugo-pink;
 
 //Footers
 $site-footer-bg-color:$hugo-gray-dark;
 $site-footer-height-l-plus: 30px;
 
-//Tags
-$tag-bg-color:$hugo-gray-ultra-light;
 
-//Brand Colors:
-$html: #E44D26;
-$css: #1758A7;
-$sass: #CF649A;
-$golang: #69D7E2;
-$javascript: #F0DB4F;
-
-//Homepage, using BULMA: http://bulma.io/
-// Override variables here
-// You can add new ones or update existing ones:
-
-$blue: $hugo-blue;
-$pink: $hugo-pink;
-$family-serif: "Georgia", serif;
-
-
-// Override generated variables here
-// For example, by default, the $danger color is $red and the font is sans-serif
-// You can change these values:
-
-$family-primary: $family-serif;

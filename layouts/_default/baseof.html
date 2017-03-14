@@ -4,7 +4,6 @@
 <body>
 	{{ block "header" . }}
   	{{- partial "site-header.html" . -}}
-  	{{- partial "site-search.html" . -}}
   {{ end }}
   <div class="all-content-wrapper{{if .IsHome}} home{{end}}" id="all-content-wrapper">
 		{{ block "main" . }}

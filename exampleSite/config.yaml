@@ -43,6 +43,9 @@ PygmentsCodeFencesGuessSyntax: true
 PygmentsCodeFences: true
 pygmentsUseClasses: true
 # disableKinds = ["page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
+PygmentsCodeFencesGuessSyntax: true
+PygmentsCodeFences: true
+pygmentsUseClasses: true
 disablePathToLower: false
 disableLiveReload: false
 disableRSS: false
