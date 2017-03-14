@@ -80,20 +80,32 @@ $active-color: $default-anchor-color;
 $base-button-color: $hugo-blue;
 $base-button-text-color: $hugo-white;
 $button-border-radius: 3px;
-//Codeblocks
-// $code-font-family:'courierprime',courier,monospace;
 
 
+// Codeblocks
+//// monokai
+$code-error-color: #960050;
+$code-error-bg-color: #1e0010;
+$inline-code-bg-color: #333;
+$code-comment-color: #75715e;
+$code-kw-color: #66d9ef;
+$code-numbers-color: #ae81ff;
+$code-names-color: #f8f8f2;
+$code-literals-color: #e6db74;
+$code-operator-color: #f92672;
+$code-scope-color: #a6e22e;
+
+////
+$code-block-bg-color: $inline-code-bg-color;
+$code-font-family:'courierprime',courier,monospace;
 $code-tooltip-bg-color: $hugo-blue;
 $code-block-base-font-color: $hugo-black;
 $code-editor-header-base-bg-color: $input-example-color;
-$code-filename-color:#ffffff;
+$code-filename-color: #ffffff;
 $code-copy-button-color:#ffffff;
 $code-copy-button-text-color:$base-font-color;
-$code-base-font-color:$hugo-pink-light;
+$code-base-font-color: $hugo-pink-light;
 $inline-code-text-color:$base-font-color;
-$inline-code-background-color:darken($hugo-gray-ultra-light,1%);
-$code-block-background-color: $inline-code-background-color;
 
 //Sidebar & Breadcrumb
 $site-navigation-width: 250px;

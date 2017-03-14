@@ -1,28 +1,32 @@
-kbd {
-  font-family: $code-font-family;
-}
+kbd { font-family: $code-font-family; }
 
 .body-copy {
   code,
   pre {
-    font-family: $code-font-family;
-    font-size: .9em;
-    weight: inherit;
-    font-weight: $code-font-base-weight;
-    overflow-y: visible;
-    z-index: 1;
+      width: 100%;
+      line-height: 100%;
+      font-family: $code-font-family;
+      font-size: .9em;
+      weight: inherit;
+      font-weight: $code-font-base-weight;
+      overflow-y: visible;
+      z-index: 1;
   }
   > pre {
     position: relative;
     margin-bottom: 1.5em;
   }
-  pre > code,
+  div.highlight,
+  code,
+  code > pre
   .code {
-    background-color: $code-block-background-color;
+    background-color: $code-block-bg-color;
   }
-  > pre {
-    overflow-x: scroll;
+  code  {
+      padding-top: 10px;
+      padding-bottom: 2px;
   }
+  > pre { overflow-x: scroll; };
   ol,
   ul,
   div,
@@ -31,24 +35,23 @@ kbd {
   span,
   p,
   dd,
-  dt,
-  {
-    code {
-      background-color: $inline-code-background-color;
-      @include MQ(retina) {
-        background-color: $inline-code-background-color;
+  dt {
+      code {
+          background-color: $inline-code-bg-color;
+          @include MQ(retina) {
+              background-color: $inline-code-bg-color;
+          }
       }
-    }
   }
 }
 
-.code {
+.code, code {
   display: block;
   position: relative;
   overflow: hidden;
   padding: .5em;
   overflow-y: visible;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 code[class^="language-"] {
@@ -154,7 +157,7 @@ blockquote,
   padding-left: 1em;
   padding-top: .25em;
   font-size: .7em;
-  background-color: $code-block-background-color;
+  background-color: $code-block-bg-color;
   width: 100%;
   font-style: italic;
   margin-bottom: 0px;
