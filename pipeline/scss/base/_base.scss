@@ -50,3 +50,28 @@ p {
   display:none;
 }
 
+.scroll-wrapper {
+  margin-right: -17px !important;
+  overflow: hidden;
+}
+
+.scroll-hide-y {
+  padding-right: 17px !important;
+  overflow-y: scroll;
+  height:100vh;
+}
+
+.scroll-wrapper, .scroll-hide-y::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-fixed-wrapper {
+  overflow: hidden;
+}
+
+.scroll-fixed-wrapper-inner {
+  height:100vh;
+  overflow-y:scroll;
+  margin-right: -17px !important;
+}
+

@@ -1,17 +1,13 @@
 aside#toc {
   position: fixed;
-  max-width: $site-navigation-width;
   min-width: $site-navigation-width;
+  max-width: $site-navigation-width;
   max-height: calc(100vh - #{$site-header-height} - 40px);
-  overflow-y: scroll;
-  overflow-x: hidden;
-  margin-right: -17px !important;
-  .toc-inner-wrapper {
-    padding-right: 17px !important;
-  }
-  padding: {
-    left: .5em;
-    right: .5em;
+  .scroll-fixed-wrapper-inner {
+    padding: {
+      left: .5em;
+      right: .5em;
+    }
   }
   bottom: 40px;
   right: 20px;
@@ -44,11 +40,6 @@ aside#toc {
     opacity: 1;
   }
   @include MQ(XL) {
-    .toc-inner-wrapper {
-      position: relative;
-      min-height: calc(100vh - 20px - #{$site-header-height} - #{$site-footer-height-l-plus});
-      max-height: calc(100vh - 20px - #{$site-header-height} - #{$site-footer-height-l-plus});
-    }
     box-shadow: none;
     top: $site-header-height;
     right: 0px;

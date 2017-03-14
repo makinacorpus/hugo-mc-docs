@@ -1,116 +1,100 @@
-.site-navigation::-webkit-scrollbar {
-  display: none;
-}
-.site-navigation-wrapper {
-  margin-right: -17px !important;
-  overflow: hidden;
-  overflow-y: scroll;
-}
 .site-navigation {
-  padding-right: 17px !important;
-  transition: transform .3s ease-in-out;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  bottom: 0px;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 9;
   width: $site-navigation-width;
+  padding: 0px;
+  padding-bottom: 2em;
   background-color: $site-navigation-bg-color;
   transform:translateX(-#{$site-navigation-width});
-  padding: 0px;
-  z-index: 9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 2em;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  transition: transform .3s ease-in-out;
   &.navigation-open {
-    transition: transform .3s ease-in-out;
-    transform: translateX(0px);
+    transition:transform .3s ease-in-out;
+    transform:translateX(0px);
   }
-  @include MQ(L) {
-    transform: translateX(0px);
-  }
-  ul li a {
-    display: flex;
-  }
-  ul.menu {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    width: 90%;
-    @include MQ(L) {
-      margin-top: $site-header-height + 10px;
-    }
-    a {
-      color: $base-font-color;
-      font-weight: $base-font-weight;
-      width: 100%;
-      &:hover {
-        color: $hugo-pink;
+  @include MQ(L) {transform: translateX(0px);}
+  .site-navigation-inner {
+    ul.menu {
+      margin-top: 7px;
+      margin-bottom: 7px;
+      @include MQ(L) {
+        margin-top: $site-header-height + 10px;
       }
-    }
-    li {
-      padding-left: 0px;
-      line-height: 1.0;
-      padding-top: .65em;
-      ul li {
+      a {
+        color: $base-font-color;
+        font-weight: $base-font-weight;
+        &:hover {
+          color: $hugo-pink;
+        }
+      }
+      li {
+        line-height: 1.0;
+        padding-top: .65em;
         padding-left: .6em;
+        padding-right: 5px;
       }
     }
-  }
-  a.menu-item-link {
-    width: 100%;
-    i.fa.fa-angle-double-right {
-      margin-left: .35em;
-    }
-    &.active {
-      color: $hugo-pink;
-      font-weight: 700;
-      + ul.menu {
-        display: block;
-        border-left: 2px solid $hugo-pink;
+    a.menu-item-link {
+      i.fa.fa-angle-double-right {
+        margin-left: .35em;
+      }
+      &.active {
+        color: $hugo-pink;
+        font-weight: 700;
+        + ul.menu {
+          display: block;
+          border-left: 2px solid $hugo-pink;
+        }
       }
     }
-  }
-  ul.menu-1 {
-    margin-top: $site-header-height + 30px;
-  }
-  ul.menu-2,
-	ul.menu-3,
-	ul.menu-4,
-	ul.menu-5,
-	ul.menu-6,
-	ul.menu-7,
-	ul.menu-8,
-	ul.menu-9,
-	ul.menu-10 {
-    display: none;
-    margin-top: 0px;
-    padding-top: 5px;
-  }
-  ul.menu-1, ul.menu-2 {
-    li { line-height: 1.0; }
-    a.menu-item-link-2 { font-size: 16px; }
-  }
-  ul.menu-2 {
-    a.menu-item-link-2 { font-size: 15px; }
-  }
-  ul.menu-3,
-  ul.menu-4, ul.menu-5, ul.menu-6, ul.menu-7,
-  ul.menu-8, ul.menu-9, ul.menu-10 {
-   a.menu-item-link-4 { font-size: 14px; }
-  }
-  ul.menu-1.open, ul.menu-2.open, ul.menu-3.open, ul.menu-4.open, ul.menu-5.open,
-  ul.menu-6.open, ul.menu-7.open, ul.menu-8.open, ul.menu-9.open, ul.menu-10.open,
-  ul.menu.open {
-    display:block;
+    ul.menu-1 {
+      margin-top: $site-header-height + 30px;
+    }
+    ul.menu-2,
+    ul.menu-3,
+    ul.menu-4,
+    ul.menu-5,
+    ul.menu-6,
+    ul.menu-7,
+    ul.menu-8,
+    ul.menu-9,
+    ul.menu-10 {
+      display: none;
+      margin-top: 0px;
+      padding-top: 5px;
+    }
+    ul.menu-1,
+    ul.menu-2 {
+      li { line-height: 1.0; }
+      a { font-size: 16px; }
+    }
+    ul.menu-2 {
+      a { font-size: 15px; }
+    }
+    ul.menu-3,
+    ul.menu-4, ul.menu-5, ul.menu-6, ul.menu-7,
+    ul.menu-8, ul.menu-9, ul.menu-10 {
+      padding-bottom: 6px;
+      li {
+        padding-top: 5px;
+      }
+      a {
+        font-size:12px;
+        line-height: normal;
+      }
+    }
+    ul.menu-1.open, ul.menu-2.open, ul.menu-3.open, ul.menu-4.open, ul.menu-5.open,
+    ul.menu-6.open, ul.menu-7.open, ul.menu-8.open, ul.menu-9.open, ul.menu-10.open,
+    ul.menu.open {
+      display:block;
+    }
   }
 }
+
 .navigation-toggle-wrapper {
   width: 50px;
   height: 50px;
-  /*border:1px solid red;*/
   position: fixed;
   top: 2px;
   left: 0px;
@@ -127,5 +111,3 @@
     display: none;
   }
 }
-
-

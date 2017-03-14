@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $('ul.menu').each(function(item, val) {
-        console.log($(val).find('a.menu-item-link.open').length);
         if($('a.menu-item-link.open', $(val)).length) {
             $(val).show();
         }
@@ -11,9 +10,7 @@ function activatelevelnav(level) {
     // evt.preventDefault();
     // evt.stopPropagation();
     var $ul = $(this).next('ul'),
-    siblingLinks = $(
-     '.menu-item-link-'+level+'.has-children.open'
-    ).next('ul');
+    siblingLinks = $('.menu-item-link-'+level+'.has-children.open').next('ul');
     siblingLinks.velocity('slideUp', { easing: 'easeOut', duration: 200 });
     var isOpen = $(this).hasClass('open'),
       slideDir = isOpen ? 'slideUp' : 'slideDown',

@@ -7,11 +7,12 @@
     </ul>
   </a>
 </div>
-<div class="site-navigation-wrapper">
-  <nav class="site-navigation" id="site-navigation" class="navigation-open">
-  {{ $.Scratch.Set "currentPage" . }}
-  {{ $.Scratch.Set "currentNode" .Site.Menus.main.ByWeight }}
-  {{ partial "site-navigation-start" . }}
-  {{ $.Scratch.Set "currentNode" .Site.Menus.main.ByWeight }}
-  </nav>
-</div>
+<nav class="site-navigation navigation-open scroll-fixed-wrapper"
+     id="site-navigation">
+  <div class="site-navigation-inner scroll-fixed-wrapper-inner">
+    {{ $.Scratch.Set "currentPage" . }}
+    {{ $.Scratch.Set "currentNode" .Site.Menus.main.ByWeight }}
+    {{ partial "site-navigation-start" . }}
+    {{ $.Scratch.Set "currentNode" .Site.Menus.main.ByWeight }}
+  </div>
+</nav>

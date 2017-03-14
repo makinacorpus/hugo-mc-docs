@@ -1,8 +1,8 @@
 <!-- TOCs need to be declared explicitly in the front matter of content/*.md
     if the level is below one section -->
 {{ if .Params.toc | default true }}
-<aside id="toc">
-  <div class="toc-inner-wrapper">
+<aside id="toc" class="scroll-fixed-wrapper">
+  <div class="scroll-fixed-wrapper-inner">
     <header class="toc-header">
       <a href="#{{.Title | urlize}}">
         <h3 class="{{.Section}}">{{.Title}}</h3>
