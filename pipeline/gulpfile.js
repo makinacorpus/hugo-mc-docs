@@ -22,9 +22,9 @@ const sassfiles = ["./scss/**/*.scss"];
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const cp = require('child_process');
-const hugo_themes_dir = path.dirname(path.dirname(__dirname));
+const hugo_themes_dir = process.env.W ? process.env.W+"/themes" : path.dirname(path.dirname(__dirname));
+const hugo_dir = process.env.W ? process.env.W : path.dirname(hugo_themes_dir);
 const hugo_themes_dirname = path.basename(hugo_themes_dir);
-const hugo_dir = path.dirname(hugo_themes_dir);
 
 var server = require('gulp-server-livereload');
 var doc_root = hugo_dir + '/public';

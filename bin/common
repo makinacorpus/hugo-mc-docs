@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+RSC=${SC:-$(readlink $0)}
 SC=${SC:-$(readlink -f $0)}
 THEME=$(dirname $(dirname $SC))
 THEMES=$(dirname $THEME)
-W=$(dirname $THEMES)
+W=${W:-$(dirname $THEMES)}
 VENV_PATH=${VENV_PATH:-$W/var/venv}
 if [[ "$(basename $THEMES)" != "themes" ]];then
     echo "install this in a correct theme folder layout"
