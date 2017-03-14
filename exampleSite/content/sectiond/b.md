@@ -1,23 +1,14 @@
 ---
-title: super doc a
-tags: [aa, bb]
+title: super doc b
+tags: [aa, cc]
 menu:
   main:
-    parent: asection
+    identifier: sectiond_b
+    parent: sectiond
 ---
 
+
 ## Fessa sic sub nolim quae
-
-Code sample
-```sh
-very
-very
-very
-long
-long
-long script
-
-```
 
 Lorem markdownum triplex qualem: habendus de hic vultus quod his praedator
 sentit, validos in? Bicorni Penelopae in poena cervus ille cum sparsae, qui

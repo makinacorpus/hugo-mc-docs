@@ -1,10 +1,12 @@
 ---
-title: super document 2
-tags: [222, 333]
+title: super doc b
+tags: [aa, cc]
 menu:
   main:
-    parent: bsection
+    identifier: sectiona_b
+    parent: sectiona
 ---
+
 
 ## Fessa sic sub nolim quae
 

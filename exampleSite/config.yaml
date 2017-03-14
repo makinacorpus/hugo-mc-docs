@@ -7,7 +7,7 @@ theme: "hugo-mc-docs"
 defaultContentLanguage: fr
 languageCode: "fr-FR"
 buildDrafts: true
-uglyURLs: true
+uglyURLs: false
 canonifyurls: true
 taxonomies:
   category: "categories"
@@ -21,7 +21,7 @@ params:
   logo: "/images/MakinaCorpus_logo_vert_blanc.svg"
   favicon: "favicon.ico"
   siteaddress: "https://foo.net"
-  ghrepo: "https://gitlab.foo.net/doc/umentation"
+  ghrepo: "https://gitlab.foo.net/doc/umentation/"
   ghdocsrepo: "https://gitlab.foo.net/doc/umentation/edit/master/"
   permalink: "#"
   includejq: false
@@ -39,12 +39,15 @@ params:
   # (note that Hugo docs currently hosts its own FA
   # (see pipeline/scss/_variables.scss))
   usefontawesome: false
+PygmentsCodeFencesGuessSyntax: true
+PygmentsCodeFences: true
+pygmentsUseClasses: true
 # disableKinds = ["page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
 disablePathToLower: false
 disableLiveReload: false
 disableRSS: false
 disableSitemap: false
-enableGitInfo: false
+enableGitInfo: true
 enableRobotsTXT: true
 disable404: false
 disableHugoGeneratorInject: true
@@ -65,7 +68,6 @@ blackfriday:
 # This intelligently adds an "s" to the titles of list pages
 pluralizelisttitles: false
 preserveTaxonomyNames: true
-pygmentsUseClasses: true
 watch: true
 metaDataFormat: "yaml"
 permalinks:
@@ -76,13 +78,26 @@ menu:
       Name: "Home"
       identifier: home
       weight: 1000
-    - URL: /asection/
+    - URL: /sectiona/
+      identifier: sectiona
       Name: "A section"
-      identifier: asection
       weight: 2000
-    - URL: /bsection/
+    - URL: /sectionb/
+      identifier: sectionb
       Name: "B section"
-      identifier: bsection
       weight: 3000
+    - URL: /sectionc/
+      identifier: sectionc
+      Name: "C section"
+      weight: 4000
+    - URL: /sectiond/
+      identifier: sectiond
+      Name: "D section"
+      weight: 3000
+    - URL: /sectione/
+      identifier: sectione
+      Name: "E section"
+      weight: 3000
+    - URL: /sectione/
 ---
 # vim: set et:
