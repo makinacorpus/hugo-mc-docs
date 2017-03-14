@@ -10,3 +10,7 @@
 /bin/npm
 /bin/yarn
 /Dockerfile
+/bin/control.sh
+/bin/docker.sh
+/bin/hugo
+/themes
