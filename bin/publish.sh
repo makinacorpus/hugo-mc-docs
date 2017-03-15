@@ -30,7 +30,7 @@ refresh_project() {
             --exclude=node_modules \
             --exclude=public &&\
         vv sed -i -r \
- -e 's|baseURL: .*|baseURL: "https://hugo-mc-docs.makina-corpus.com/"|g' \
+ -e 's|baseURL: .*|baseURL: "http://hugo-mc-docs.makina-corpus.com/"|g' \
  -e 's|gitlab.foo.net|github.com|g' \
  -e 's|doc/umentation|makinacorpus/hugo-mc-docs|g' \
  -e 's|edit/master|edit/master/exampleSite|g' \
