@@ -101,6 +101,9 @@ menu:
       identifier: sectione
       Name: "E section"
       weight: 3000
-    - URL: /sectione/
+    - URL: /contribute/
+      Name: "Contribute"
+      identifier: contribute
+      weight: 1000
 ---
 # vim: set et:
