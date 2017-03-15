@@ -30,7 +30,7 @@ refresh_project() {
             --exclude=node_modules \
             --exclude=public &&\
         vv sed -i -r \
- -e 's|baseURL: .*|baseURL: "https://makinacorpus.github.io/hugo-mc-docs/"|g' \
+ -e 's|baseURL: .*|baseURL: "https://hugo-mc-docs.makina-corpus.com/"|g' \
  -e 's|gitlab.foo.net|github.com|g' \
  -e 's|doc/umentation|makinacorpus/hugo-mc-docs|g' \
  -e 's|edit/master|edit/master/exampleSite|g' \
@@ -48,7 +48,8 @@ cd "$W" && cleanup && \
     refresh_project &&\
 	vv themes/*/bin/control.sh install &&\
 	vv themes/*/bin/control.sh gulp &&\
-	vv rsync -azv public/ ../public/ --delete
+    vv rsync -azv public/ ../public/ --delete &&\
+    echo "hugo-mc-docs.makina-corpus.com">public/CNAME
 ret=$?
 cleanup
 if [ "x$ret" != "x0" ];then
