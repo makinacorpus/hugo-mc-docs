@@ -22,7 +22,7 @@ params:
   favicon: "favicon.ico"
   siteaddress: "https://foo.net"
   ghrepo: "https://gitlab.foo.net/doc/umentation/"
-  ghdocsrepo: "https://gitlab.foo.net/doc/umentation/edit/master/"
+  edit_link: "https://gitlab.foo.net/doc/umentation/edit/master/content/"
   permalink: "#"
   includejq: false
   sitepublishdate: ""

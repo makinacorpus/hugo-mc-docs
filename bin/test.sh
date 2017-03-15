@@ -28,7 +28,7 @@ refresh_project() {
      -e 's|baseURL: .*|baseURL: "/"|g' \
      -e 's|gitlab.foo.net|github.com|g' \
      -e 's|doc/umentation|makinacorpus/hugo-mc-docs|g' \
-     -e 's|edit/master|edit/master/exampleSite|g' \
+     -e 's|edit/master/content/|edit/master/exampleSite/content/|g' \
          config.yaml &&\
         cd -
 }
