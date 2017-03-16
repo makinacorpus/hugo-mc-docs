@@ -14,14 +14,11 @@ call_gulp() {
             npm install $i
         fi
     done
-    for i in gulp-server-livereload gulp-cli file-exists;do
+    for i in gulp-sass gulp-babel gulp-server-livereload gulp-cli file-exists;do
         if [ ! -e node_modules/$i ];then
-            npm install $i
+            npm install
         fi
     done
-    if [ ! -e node_modules/gulp-babel ];then
-        npm install
-    fi
     if [[ -n $FORCE_NPM ]];then npm install;fi
     retry=""
     case $@ in

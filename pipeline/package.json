@@ -35,11 +35,16 @@
     "gulp-imagemin": "^2.2.1",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
-    "gulp-ruby-sass": "^2.1.1",
-    "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.1.0",
     "imagemin-pngquant": "^4.0.0",
-    "pump": "^1.0.1"
+    "pump": "^1.0.1",
+    "node-sass": "^3.13.1",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sass": "^2.0.4",
+    "file-exists": "^3.0.2",
+    "gulp-babel": "^6.1.2",
+    "gulp-cli": "^1.2.2",
+    "gulp-server-livereload": "^1.9.2"
   }
 }
