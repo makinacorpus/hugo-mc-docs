@@ -2,8 +2,11 @@
 <main class="main">
 	<div class="content">
 	<header class="content-header">
-			<h1 class="page-title"><i class="icon-{{.Data.Plural}}"></i> {{.Data.Plural}}</h1>
-		</header>
+    <h1 class="page-title">
+        <i class="icon-{{.Data.Plural}}"></i>
+        {{.Data.Plural}}
+    </h1>
+    </header>
 		<div class="body-copy taxonomies">
 			{{ $data := .Data }}
 			{{ $dataPlural := add (.Title | urlize) "/"}}

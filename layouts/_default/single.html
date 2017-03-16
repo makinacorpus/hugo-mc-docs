@@ -11,7 +11,8 @@
 			<div class="wip">WIP</div>
 			{{ end }}
 		</header>
-		<div class="body-copy" data-section={{.Section | urlize}}>
+    <div class="body-copy" 
+         data-section={{.Section | urlize}}>
 		{{.Content}}
 		</div>
 		{{- partial "content-footer.html" . -}}
