@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contribute on doc</title>
+    <link>http://hugo-mc-docs.makina-corpus.com/contribute/index.xml</link>
+    <description>Recent content in Contribute on doc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <atom:link href="http://hugo-mc-docs.makina-corpus.com/contribute/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Installation de la documentation</title>
+      <link>http://hugo-mc-docs.makina-corpus.com/contribute/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://hugo-mc-docs.makina-corpus.com/contribute/install/</guid>
+      <description>
+
+&lt;h1 id=&#34;installer-tester-des-modifications-sur-la-documentation&#34;&gt;Installer &amp;amp; tester des modifications sur la documentation&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cette doc est basée sur le système &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;,
+il est très simple de l&amp;rsquo;installer.&lt;/li&gt;
+&lt;li&gt;Le format pour écrire les documents est le &lt;a href=&#34;https://guides.github.com/features/mastering-markdown&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/content/example/&#34;&gt;Pointeur vers la doc de hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Je me suis inspiré de &lt;a href=&#34;https://github.com/squidfunk/mkdocs-material&#34;&gt;MkDocs/material&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://github.com/rdwatters/hugo-docs-concept&#34;&gt;rdwatters/hugo-docs-concept&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;editer-en-ligne-non-developpeur&#34;&gt;Editer en ligne (non developpeur)&lt;/h2&gt;
+
+&lt;p&gt;Pour des modifications plus ou moins simple, surtout si vous n&amp;rsquo;êtes pas
+développeurs, vous pouvez éditer la documentation directement depuis
+gitlab:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Aller sur &lt;a href=&#34;https://gitlab.foo.net/docu/tation/tree/master/source&#34;&gt;gitlab/tation&lt;/a&gt;
+ou cliquer sur le stylo en haut à gauche de la page que vous souhaitez éditer.&lt;/li&gt;
+&lt;li&gt;Choisir le fichier à éditer&lt;/li&gt;
+&lt;li&gt;L&amp;rsquo;éditer&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ATTENTION&lt;/strong&gt; En bas, dans &amp;ldquo;target branch&amp;rdquo;, choisir un petit nom,
+et bien vérifier que la case &amp;ldquo;start merge&amp;hellip;&amp;rdquo; soit cochée&lt;/li&gt;
+&lt;li&gt;Valider la merge request (le bouton vert, en bas)&lt;/li&gt;
+&lt;li&gt;Cela démarre le processus de validation et bientôt votre modif
+sera en ligne&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;editer-sur-sa-machine&#34;&gt;Editer sur sa machine&lt;/h2&gt;
+
+&lt;p&gt;La procédure de build est la suivate:
+- build des static css/js avec gulp
+- build hugo&lt;/p&gt;
+
+&lt;h3 id=&#34;installation-sans-docker&#34;&gt;Installation sans docker&lt;/h3&gt;
+
+&lt;h4 id=&#34;prerequis&#34;&gt;Prerequis&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -y sqlite3 liblcms2-2 liblcms2-dev libcairomm-1.0-dev &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
+    libcairo2-dev libsqlite3-dev apache2-utils autoconf automake build-essential &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
+    bzip2 gettext git groff libbz2-dev libcurl4-openssl-dev libdb-dev libgdbm-dev &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
+    libreadline-dev libfreetype6-dev libsigc++-2.0-dev libsqlite0-dev &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
+    libsqlite3-dev libtiff5 libtiff5-dev libwebp5 libwebp-dev libyaml-dev&lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
+    libssl-dev libtool libxml2-dev libxslt1-dev libopenjpeg-dev m4 &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
+    man-db pkg-config poppler-utils python-dev python-imaging python-setuptools &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
+    tcl8.4 tcl8.4-dev tcl8.5 tcl8.5-dev tk8.5-dev cython python-numpy zlib1g-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;git clone https://gitlab.foo.net/docu/tation
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; tation
+themes/hugo-mc-docs/bin/control.sh install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;installation-avec-docker&#34;&gt;Installation avec docker&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;L&amp;rsquo;install à proprement parler, fait partie du build, après le
+téléchargement passez à l&amp;rsquo;étape suivante.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://gitlab.makina-corpus.net/docu/tation
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; tation
+themes/hugo-mc-docs/bin/docker.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;reconstuire-la-documentation&#34;&gt;Reconstuire la documentation&lt;/h3&gt;
+
+&lt;h4 id=&#34;sans-docker&#34;&gt;Sans docker&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Après installation, pour construire la documentation&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;bin/control.sh serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;avec-docker&#34;&gt;Avec docker&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Construire la documentation&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;bin/docker.sh serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;tester-envoyer-ses-modications&#34;&gt;Tester &amp;amp; envoyer ses modications&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Editer la construction &amp;amp; la reconstuire&lt;/li&gt;
+&lt;li&gt;Regarder &lt;a href=&#34;http://localhost:1313&#34;&gt;http://localhost:1313&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Une fois toutes les modifications faites, vous pouvez soumettre, au
+travers de gitlab, une merge request:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt; git add
+ git commit -am &lt;span class=&#34;s2&#34;&gt;&amp;quot;ma modif&amp;quot;&lt;/span&gt;
+ git push origin HEAD:feature-mydocmodif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Se connecter sur gitlab, et demander une merge request.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Une fois la merge request acceptée, votre modif apparaitra
+rapidement sur &lt;a href=&#34;http://hugo-mc-docs.makina-corpus.com/&#34;&gt;cette doc&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
