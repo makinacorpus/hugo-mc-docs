@@ -42,8 +42,12 @@ strong {
 
 p {
   margin-top: 0px;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.0em;
   line-height: $base-line-height-content;
+}
+
+li p {
+  margin-bottom: auto;
 }
 
 ::-webkit-scrollbar {
@@ -73,5 +77,21 @@ p {
   height:100vh;
   overflow-y:scroll;
   margin-right: -17px !important;
+}
+
+.body-copy {
+	> div {
+		margin-bottom:1.5em;
+	}
+}
+
+// featherlight fixes
+@media all {
+	.featherlight .featherlight-content {
+		background: $body-bg-color;
+    }
+ 	.featherlight .featherlight-close-icon {
+		color: $base-font-color;
+	}
 }
 

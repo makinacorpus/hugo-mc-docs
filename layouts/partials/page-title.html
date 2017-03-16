@@ -1,3 +1,9 @@
-<h1 class="page-title {{.Section}}" id="{{with .LinkTitle}}{{. | urlize}}{{else}}{{ .Title | urlize }}{{end}}">
-		{{- .Title | markdownify -}}
-</h1>
+{{- $title := .LinkTitle | default .Title }}
+<div class="page-title-wrapper">
+  <h1
+    class="page-title {{if eq .Kind "page"}}{{.Section}}{{end}}"
+    id="{{ $title | urlize }}">
+      {{- $title | markdownify -}}
+      {{- partial "content-header-links.html" . }}
+  </h1>
+</div>

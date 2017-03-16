@@ -1,20 +1,23 @@
-@import 'bourbon/bourbon';
+// vendor
+@import 'vendor/bourbon/bourbon';
+@import 'vendor/featherlight';
+@import 'vendor/animatecss-truncated';
 @import 'vendor/flexboxgrid';
 
-//variables and abstracts
+// variables and abstracts
 @import 'variables';
 @import 'abstracts/mixins';
 @import 'abstracts/mediaqueries';
 @import 'abstracts/functions';
 
-//base styles
+// base styles
 @import 'base/normalize';
 @import 'base/base';
 @import 'base/fontello';
 @import 'base/fontawesome';
 @import 'base/typography';
 
-//components
+// components
 @import 'components/buttons';
 @import 'components/lists';
 @import 'components/anchors';
@@ -31,24 +34,13 @@
 @import 'components/blockquotes';
 @import 'components/breadcrumb';
 @import 'components/tables';
-@import 'components/shortcode-examples';
-
-//vendor
-@import 'vendor/featherlight';
-@import 'vendor/animatecss-truncated';
+@import 'components/pygments';
 
 //major layout parts/chrome
 @import 'layout/site-header';
 @import 'layout/site-navigation';
 @import 'layout/site-content';
-@import 'layout/showcase';
 @import 'layout/site-footer';
 @import 'layout/search-overlay';
-
-//styles for individual pages
-// @import 'pages/homepage';
-@import 'pages/homepage';
-
-@import 'vendor/pygments';
 
 @import 'temp';

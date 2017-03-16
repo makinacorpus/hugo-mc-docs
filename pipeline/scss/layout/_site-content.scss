@@ -57,13 +57,20 @@ main.main {
 }
 
 header.content-header {
-  display: block;
   clear: both;
-  width: 100%;
   position: relative;
+  width: 100%;
   margin-top: 24px;
   overflow-x: hidden;
   margin-bottom: 1em;
+  .page-title-wrapper {
+    max-width: 700px;
+    width:     700px;
+    min-height: 1.5em;
+  }
+  h1 {
+    display: inline-block;
+  }
 }
 
 .content-section-image-wrapper {
@@ -82,45 +89,63 @@ header.content-header {
   }
 }
 
-.content-header-links {
+.content-actions {
   display: none;
   @include MQ(M) {
-    display: block;
+    display: flex;
+    float:right;
   }
-  position: absolute;
-  right: 1px;
-  top: 1px;
+}
+
+.content-header-links-wrapper {
+  display: none;
+  @include MQ(M) {
+    display: inline-block;
+  }
+  height: 1em;
+  position:relative;
+}
+.content-header-links {
+  flex-wrap: wrap;
+  position:absolute;
+  width: auto;
+  overflow: visible;
+  margin-left: 10px;
+  margin-top: 7px;
+  height: 20px;
+  line-height: 20px;
   text-transform:uppercase;
-  width:auto;
-  overflow:visible;
   a {
     position: relative;
-    // border: 1px solid $hugo-gray-light;
     display: inline-block;
     color: $base-font-color;
-    padding: 4px 6px;
     vertical-align: middle;
-    @include size(36px);
-    line-height: 36px;
+    @include size(20px);
+    line-height: 20px;
     text-align: center;
+    padding: 2px 3px;
     border-radius: $button-border-radius;
     @include card(1);
     &:hover {
       color: $default-anchor-color;
     }
     i.icon-pencil {
-      font-size: 20px;
       position: relative;
-      bottom: 4px;
+      bottom: 9px;
       right: 2px;
+      font-size: 13px;
     }
     svg {
-      height: 24px;
-      width: 24px;
+      height: 18px;
+      width: 18px;
       display: inline;
     }
-    &.godoc-link {
-      border-right-width: 0px;
+    &.tooltip.edit-link:hover::before {
+      right: -120px;
+    }
+
+    &.tooltip.edit-link:hover::after {
+      right: -116px;
     }
   }
 }

@@ -1,15 +1,14 @@
 {{ define "main" }}
 <span id="page-top"></span>
 <main class="main">
-	<article class="content" id="{{.Title | urlize}}">
-		<header class="content-header">
-			{{- partial "breadcrumb.html" . -}}
-			{{- partial "page-title.html" . -}}
-			{{- partial "content-header-links.html" . -}}
-			{{- partial "tags.html" . -}}
-			{{ with .Params.wip}}
-			<div class="wip">WIP</div>
-			{{ end }}
+  <article class="content" id="{{.Title | urlize}}">
+    <header class="content-header">
+     {{- partial "breadcrumb.html" . }}
+     {{- partial "tags.html" . }}
+     {{- partial "page-title.html" . -}}
+     {{-  with .Params.wip}}
+      <div class="wip">WIP</div>
+     {{- end }}
 		</header>
     <div class="body-copy" 
          data-section={{.Section | urlize}}>

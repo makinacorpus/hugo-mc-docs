@@ -1,4 +1,5 @@
-<div class="content-header-links">
+<span class="content-header-links-wrapper">
+<span class="content-header-links">
   {{ $lrepo := .Site.Params.ghrepo | lower }}
   {{- if findRE "github" $lrepo }}
   <a target="_blank" class="tooltip right edit-link" data-tooltip="Edit this page on GitHub" href="{{.Site.Params.edit_link}}/{{.File.Path}}"><i class="icon-pencil" aria-hidden="true"></i></a>
@@ -6,4 +7,5 @@
   {{- if findRE "gitlab" $lrepo }}
   <a target="_blank" class="tooltip right edit-link" data-tooltip="Edit this page on GitLab" href="{{.Site.Params.edit_link}}/{{.File.Path}}"><i class="icon-pencil" aria-hidden="true"></i></a>
 	{{- end -}}
-</div>
+</span>
+</span>
