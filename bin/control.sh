@@ -11,15 +11,15 @@ call_gulp() {
     cd $THEME/pipeline
     for i in gulp bower grunt;do
         if ! hash -r $i >/dev/null 2>&1; then
-            npm install $i
+            yarn add $i
         fi
     done
     for i in gulp-sass gulp-babel gulp-server-livereload gulp-cli file-exists;do
         if [ ! -e node_modules/$i ];then
-            npm install
+            yarn install
         fi
     done
-    if [[ -n $FORCE_NPM ]];then npm install;fi
+    if [[ -n $FORCE_NPM ]];then yarn install;fi
     retry=""
     case $@ in
         "watch"*|"serve"*) retry=1;;
