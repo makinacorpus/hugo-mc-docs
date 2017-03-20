@@ -2,23 +2,23 @@
   title, subtitle (optional), tags, and description in all my content .md yaml.
 Once you get this down, remove the extra white space
 because it will cut down your site-index.json file considerably.-->
-[{{- range $index, $page := .Site.Pages -}}
-{{- if ne $page.Type "json" -}}
-  {{- if $index -}}, {{-  end -}}
-  {
-  "url": {{ $page.Permalink | jsonify }},
-  "section": {{ .Section | jsonify }},
-  "title": {{ $page.Title | jsonify }},
-  "type": "{{.Type}}",
-  "description": "{{.Description}}",
-  "content": {{ delimit $page.PlainWords " " | jsonify }},
-  "subtitle": {{- if $page.Params.subtitle -}}
-              {{ $page.Params.subtitle | jsonify }}
-              {{- else -}} ""{{ end }},
-  "tags": [
-  {{- range $tindex, $tag := $page.Params.tags -}}
-  {{- if $tindex -}}, {{- end -}}"{{- $tag -}}"{{-  end -}}
-  ]
-  }
-{{ end -}}
-{{- end -}}]
+{{- $.Scratch.Add "mclivesearch" slice -}}
+{{- range $index, $page := .Site.Pages -}}
+{{-   if ne $page.Type "json" -}}
+{{-     $.Scratch.Set "subtitle" $page.Params.subtitle }}
+{{-     if $page.Params.subtitle -}}
+{{-       $.Scratch.Set "subtitle" $page.Params.subtitle }}
+{{-     end }}
+{{-     $subtitle := $.Scratch.Get "subtitle" }}
+{{-     $url :=  $page.Permalink -}}
+{{-     $section :=  .Section -}}
+{{-     $title :=  $page.Title -}}
+{{-     $type := .Type -}}
+{{-     $description := .Description -}}
+{{-     $content := delimit $page.PlainWords " " -}}
+{{-     $tags := $page.Params.tags | default slice -}}
+{{-     $searchitem := ( dict "title" $title "subtitle" $subtitle "content" $content "description" $description "section" $section "tags" $tags "url" $url "type" $type ) -}}
+{{-     $.Scratch.Add "mclivesearch" $searchitem -}}
+{{-   end -}}
+{{- end -}}
+{{- $.Scratch.Get "mclivesearch" | jsonify -}}
