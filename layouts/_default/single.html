@@ -1,6 +1,6 @@
 {{ define "main" }}
 <span id="page-top"></span>
-<main class="main{{ if .Params.toc }} with-sidebar{{end}}">
+<main class="main{{ if .Params.toc | default true }} with-sidebar{{end}}">
   <article class="content" id="{{.Title | urlize}}">
     <header class="content-header">
      {{- partial "breadcrumb.html" . }}

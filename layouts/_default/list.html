@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $hidden_from_list := index .Params "hidden_from_list" | default false }}
-<main class="main{{ if .Params.toc }} with-sidebar{{end}}">
+<main class="main{{ if .Params.toc | default true }} with-sidebar{{end}}">
   <div class="content">
     {{- partial "page-title.html" . -}}
     <div class="body-copy">
