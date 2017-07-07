@@ -1,7 +1,7 @@
 six==1.10.0
 packaging==16.8
 appdirs==1.4.2
-ipython
+ipython==5.4.1
 roman
 recommonmark
 Pygments==2.2.0
