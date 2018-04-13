@@ -44,6 +44,7 @@ main() {
         -v "$W/public:/s/public" \
         -v "$W/static:/s/static" \
         -v "$W/themes:/s/themes" \
+        -v "$W/.git:/s/.git" \
         "$TAG" ${cmd} ${args}
 }
 main "${@}"
