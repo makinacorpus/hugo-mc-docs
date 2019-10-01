@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:xenial
 RUN bash -c "\
     apt-get update -qq &&\
     apt-get install -y sqlite3 liblcms2-2 liblcms2-dev libcairomm-1.0-dev \
