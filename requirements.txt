@@ -5,5 +5,5 @@ appdirs==1.4.2
 #ipython
 roman
 recommonmark
-Pygments==2.2.0
+Pygments==2.7.4
 pymdown-extensions==2.0
