@@ -8,7 +8,7 @@ if ! (hash -r virtualenv);then
     exit 1
 fi
 if [ ! -e "${VENV_PATH}"/bin/activate ];then
-    virtualenv --no-site-packages "${VENV_PATH}"
+    virtualenv --python=python3 "${VENV_PATH}"
 fi
 . "${VENV_PATH}"/bin/activate
 ls -1 "${VENV_PATH}/bin/python"
