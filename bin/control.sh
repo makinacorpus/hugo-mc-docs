@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+
 export SC=$(readlink -f "$0")
 export DSC=$(dirname "$SC")
 . "$DSC/common" || exit 1
@@ -78,7 +79,7 @@ main() {
             shift
             ( call_gulp serve $@; )
             ;;
-        "hugo "*)
+        "hugo"*)
             ( vactivate && $@ ;)
             ;;
         *)
