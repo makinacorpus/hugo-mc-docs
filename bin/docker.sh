@@ -12,13 +12,8 @@ export TAG=${TAG:-makinacorpus/sysdoc}
 cd "${W}"
 vv () { echo "$@">&2; "${@}"; }
 if [[ -z $NO_BUILD ]];then
-    # handle pb with node_modules that is too heavy
-    # and still uploaded to context despite being ignored
-    # by dockerignore
-    # docker build -t makinacorpus/sysdoc .
-    tar -cf - .\
-        --exclude={.git,var,public,themes/*/*/node_modules} \
-        | docker build -f "themes/$(basename $THEME)/Dockerfile" -t ${TAG} -
+    export DOCKERFILE="themes/$(basename $THEME)/Dockerfile"
+    cat $DOCKERFILE | docker build --cache-from=$TAG -f - -t ${TAG} .
 fi
 main() {
     local cmd=/s/bin/control.sh

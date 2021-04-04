@@ -78,7 +78,7 @@ main() {
             shift
             ( call_gulp serve $@; )
             ;;
-        "hugo "*)
+        "hugo"*)
             ( vactivate && $@ ;)
             ;;
         *)
